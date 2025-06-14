@@ -9,18 +9,18 @@ import footorData from "@/app/data/footorData.json"
 export const Footer = () => {
   const [focued, setfocused] = useState(false);
   return (
-    <footer className="mt-2  w-full px-10">
+    <footer className="mt-2  w-full">
       <div className="flex flex-row items-start">
         <div className="w-full">
           <div className="w-full grid items-center  my-6 justify-center  ">
-            <div className="grid grid-cols-4 gap-x-10 mb-4  list-none text-text5 font-bold text-xl px-12 text-md">
+            <div className="grid grid-cols-4 gap-x-10 mb-4  list-none text-text5 font-bold text-xl  text-md">
               <li>LIGHT BULBS</li>
               <li>LIGHTING</li>
               <li>ELECTRONIC GOODS</li>
               <li>SIGN UP OUR NEWSLETTER</li>
             </div>
 
-            <div className="grid grid-cols-4  gap-x-10 text-text8 font-light text-sm  px-12  hover:bg-bg8  ">
+            <div className="grid grid-cols-4  gap-x-10 text-text8 font-light text-sm    hover:bg-bg8  ">
               <ul className="space-y-2">
                 <li>Energy Saving</li>
                 <li  >Compact Fluorescent</li>

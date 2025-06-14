@@ -10,62 +10,13 @@ import { useState } from 'react';
 
 export default function Header() {
    const [isFocused, setIsFocused] = useState(false);
-  // useEffect(() => {
-  //   const basketBtn = document.getElementById("basketBtn");
-  //   const basketDropdown = document.getElementById("basketDropdown");
 
-  //   function handleToggle(e: MouseEvent) {
-  //     e.stopPropagation();
-  //     basketDropdown?.classList.toggle("hidden");
-  //   }
-
-  //   function handleClickOutside(e: MouseEvent) {
-  //     const target = e.target as Node;
-  //     if (
-  //       basketDropdown &&
-  //       !basketDropdown.contains(target) &&
-  //       basketBtn &&
-  //       !basketBtn.contains(target)
-  //     ) {
-  //       basketDropdown.classList.add("hidden");
-  //     }
-  //   }
-
-  //   function closeByCross() {
-  //     basketDropdown?.classList.add("hidden");
-  //   }
-
-  //   basketBtn?.addEventListener("click", handleToggle);
-  //   document.addEventListener("click", handleClickOutside);
-
-  //   // ⚠️ Delay attaching btnClose until it's actually in the DOM
-  //   const observer = new MutationObserver(() => {
-  //     const btnClose = document.getElementById("btnClose");
-  //     if (btnClose) {
-  //       btnClose.addEventListener("click", closeByCross);
-  //     }
-  //   });
-
-  //   observer.observe(document.body, { childList: true, subtree: true });
-
-  //   return () => {
-  //     basketBtn?.removeEventListener("click", handleToggle);
-  //     document.removeEventListener("click", handleClickOutside);
-
-  //     const btnClose = document.getElementById("btnClose");
-  //     if (btnClose) {
-  //       btnClose.removeEventListener("click", closeByCross);
-  //     }
-
-  //     observer.disconnect();
-  //   };
-  // }, []);
 
   return (
  <header className="bg-bg1 w-full">
   <div className="flex w-full items-center">
    
-    <div className="w-full px-6">
+    <div className="w-full">
       <a href="/">
         <img
           src="https://doo9vxlv0gkqf.cloudfront.net/media/logo/default/LOGO_ELB_update_100122.jpg"
@@ -283,3 +234,56 @@ export default function Header() {
     </header>
   );
 }
+
+
+
+  // useEffect(() => {
+  //   const basketBtn = document.getElementById("basketBtn");
+  //   const basketDropdown = document.getElementById("basketDropdown");
+
+  //   function handleToggle(e: MouseEvent) {
+  //     e.stopPropagation();
+  //     basketDropdown?.classList.toggle("hidden");
+  //   }
+
+  //   function handleClickOutside(e: MouseEvent) {
+  //     const target = e.target as Node;
+  //     if (
+  //       basketDropdown &&
+  //       !basketDropdown.contains(target) &&
+  //       basketBtn &&
+  //       !basketBtn.contains(target)
+  //     ) {
+  //       basketDropdown.classList.add("hidden");
+  //     }
+  //   }
+
+  //   function closeByCross() {
+  //     basketDropdown?.classList.add("hidden");
+  //   }
+
+  //   basketBtn?.addEventListener("click", handleToggle);
+  //   document.addEventListener("click", handleClickOutside);
+
+  //   // ⚠️ Delay attaching btnClose until it's actually in the DOM
+  //   const observer = new MutationObserver(() => {
+  //     const btnClose = document.getElementById("btnClose");
+  //     if (btnClose) {
+  //       btnClose.addEventListener("click", closeByCross);
+  //     }
+  //   });
+
+  //   observer.observe(document.body, { childList: true, subtree: true });
+
+  //   return () => {
+  //     basketBtn?.removeEventListener("click", handleToggle);
+  //     document.removeEventListener("click", handleClickOutside);
+
+  //     const btnClose = document.getElementById("btnClose");
+  //     if (btnClose) {
+  //       btnClose.removeEventListener("click", closeByCross);
+  //     }
+
+  //     observer.disconnect();
+  //   };
+  // }, []);

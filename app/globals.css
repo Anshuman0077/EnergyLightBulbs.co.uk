@@ -37,6 +37,7 @@
   --text-17: #333333;
   --text-18: #272727;
   --text-19: #000000;
+  --text-20:  #71bd1b;
 
   --border-1: #e2e2e2;
   --border-2: #e0e0e0;
@@ -119,6 +120,7 @@ body {
   .text-text17 { color: #333333; }
   .text-text18 { color: #272727; }
   .text-text19 { color: #000000; }
+  .text-text20 {color: #71bd1b; }
 
   /* --- ✅ Border Colors --- */
   .border-border1 { border-color: #e2e2e2; }
@@ -141,6 +143,10 @@ body {
   .hover\:bg-bg6:hover {
     background-color:#71bd1b;
   }
+
+  .hover\:bg-bg9:hover {
+    background-color: #ff740d;
+  }
 .shadow-blue-custom {
   box-shadow: 0 1.5px 5px 1px var(--text-11);
 }
@@ -150,9 +156,13 @@ body {
     color: var(--text-6);
   }
 }
-
   .shadow-shadow-blue-custom {
     box-shadow: 0 0 0 4px var(--border-9);
   }
+
+  .hover\:text-text20:hover {
+    color: #71bd1b;
+  }
+
 
 }
