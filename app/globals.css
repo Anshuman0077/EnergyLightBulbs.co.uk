@@ -150,6 +150,13 @@ body {
 .shadow-blue-custom {
   box-shadow: 0 1.5px 5px 1px var(--text-11);
 }
+  .hover\:text-text20:hover {
+    color: #71bd1b;
+  }
+
+  .hover\:border-border8:hover{
+    border: #ff740d ;
+  }
 
 @layer utilities {
   .ul-hover li:hover {
@@ -157,12 +164,10 @@ body {
   }
 }
   .shadow-shadow-blue-custom {
-    box-shadow: 0 0 0 4px var(--border-9);
+    box-shadow: 1px 0.5px 1px 2px var(--border-9);
   }
 
-  .hover\:text-text20:hover {
-    color: #71bd1b;
-  }
+
 
 
 }
