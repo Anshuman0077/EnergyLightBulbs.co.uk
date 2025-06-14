@@ -1,0 +1,82 @@
+{
+  "sections": [
+    {
+      "title": "LIGHT BULBS",
+      "items": [
+        "Energy Saving",
+        "Compact Fluorescent",
+        "Halogen Bulbs",
+        "LEDs",
+        "R7s Halogen Linear J118/J78",
+        "Appliance Bulbs",
+        "Sodium Lamps",
+        "Metal Halide Lamps",
+        "Energy Saving Halogens",
+        "Low Voltage Bulbs",
+        "Incandescent Decoration Light Bulbs"
+      ]
+    },
+    {
+      "title": "LIGHTING",
+      "items": [
+        "Fire Rated Down Lights",
+        "Ceiling Down Lights",
+        "Bathroom Lighting",
+        "Cabinet / Undershelf Lighting",
+        "Transformers / LED Drivers",
+        "Switches & Sockets",
+        "Socket Converters & Adaptors",
+        "LED Panels",
+        "Indoor Wall lights",
+        "Decoration string lights",
+        "Christmas Decorations",
+        "Emergency Lights",
+        "Commercial Lights",
+        "Sensor Lights & PIRs"
+      ]
+    },
+    {
+      "title": "ELECTRONIC GOODS",
+      "items": [
+        "Electrical Goods",
+        "Lamps and Table Lamps",
+        "Adaptors & Extension Leads",
+        "Photoelectric Smoke Alarm",
+        "Night Lights",
+        "Torches",
+        "Fans And Heaters"
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "title": "ENERGY CALCULATOR",
+      "link": "/energy-calulator",
+      "bg": "bg-bg8"
+    },
+    {
+      "title": "BASE FINDER",
+      "link": "/base-finder",
+      "bg": "bg-bg11"
+    },
+    {
+      "title": "LEDS BUYER GUIDE",
+      "link": "/buyers-guide-led",
+      "bg": "bg-bg7"
+    }
+  ],
+  "newsletter": {
+    "placeholder": "Enter your email address",
+    "buttonText": "SUBSCRIBE"
+  },
+  "contact": {
+    "address": "T2, Arundel Road,Uxbridge,Middlesex, UB8 2RP, United Kingdom.",
+    "phone": "01895 55 33 00",
+    "email": "orders@energylightbulbs.co.uk"
+  },
+  "openingHours": [
+    "Mon - Fri: 9.30am - 5.00pm",
+    "Sat: 10am - 4pm",
+    "Sun: Closed"
+  ]
+}
