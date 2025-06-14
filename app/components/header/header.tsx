@@ -55,7 +55,7 @@ export default function Header() {
         <div className="flex items-center space-x-3 mt-2.5 mx-3">
           
           <div className="relative group">
-            <div className="border-2 border-border5 flex items-center px-3 py-2 rounded-md space-x-2">
+            <div className="border-2 border-border5 flex items-center px-3 py-2 rounded-md space-x-2 hover:border-red-400">
               <button type="button" className="font-semibold text-text14 text-md">MY ACCOUNT</button>
               <MdArrowDropDown size={28} className="text-text14" />
             </div>
