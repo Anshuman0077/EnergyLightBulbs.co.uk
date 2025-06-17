@@ -1,63 +1,79 @@
-import React from "react";
+"use client";
+
+import React, { useState, useRef } from "react";
 import { CategoryData } from "./categoryData";
+import { categoryList } from "./categoryList";
 
 export const Category = () => {
-  const categories = [
-    "Light Bulbs",
-    "LED Light Bulbs",
-    "Lighting",
-    "Vintage Collection",
-    "Outdoor Lighting",
-    "Pendants & Shades",
-    "Switches & Shockets",
-    "Commercial Lighting",
-    "Chandeliers",
-    "Electrical Goods",
-    "Shop BY filament",
-    "New Arrivals",
-  ];
+  const [selectedCategoryIndex, setSelectedCategoryIndex] = useState<
+    number | null
+  >(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = (index: number) => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setSelectedCategoryIndex(index);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setSelectedCategoryIndex(null);
+    }, 300);
+  };
+
+  const currentCategory =
+    selectedCategoryIndex !== null ? categoryList[selectedCategoryIndex] : null;
 
   return (
-<div className="relative w-full group">
-  {/* Category List */}
-  <ul className="flex items-center justify-center gap-x-1 px-10  z-10 relative">
-    {categories.map((category, index) => {
-      const isLastTwo = index >= categories.length - 2;
+    <div className="relative w-full group">
+      {/* Category List */}
+      <ul className="flex items-center justify-center gap-x-1 px-10 z-10 relative">
+        {categoryList.map((category, index) => {
+          const isLastTwo = index >= categoryList.length - 2;
 
-      return (
-        <li
-          key={index}
-          className={`flex items-stretch min-h-[60px] px-3 transition-all duration-300 hover:text-text20 ${
-            isLastTwo ? "hover:bg-bg9" : ""
-          }`}
+          return (
+            <li
+              key={index}
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={handleMouseLeave}
+              className={`flex items-stretch min-h-[60px] px-3 transition-all duration-300 hover:text-text20 ${
+                isLastTwo ? "hover:bg-bg9" : ""
+              }`}
+            >
+              <span
+                className={`flex items-center gap-1 text-sm font-medium cursor-pointer transition-all duration-300 ease-in ${
+                  isLastTwo ? "text-white hover:text-text20" : ""
+                }`}
+              >
+                <span className="text-text20">•</span>
+                {category.name}
+              </span>
+            </li>
+          );
+        })}
+      </ul>
+
+      <div className="px-10">
+        <div className="h-1 w-0 bg-bg6 group-hover:w-full transition-all ease-in-out duration-300" />
+      </div>
+
+      {currentCategory && (
+        <div
+          onMouseEnter={() => handleMouseEnter(selectedCategoryIndex!)}
+          onMouseLeave={handleMouseLeave}
+          className="absolute top-full px-10 w-full z-20"
         >
-          <span
-            className={`flex items-center gap-1 text-sm font-medium cursor-pointer transition-all duration-300 ease-in-out ${
-              isLastTwo ? "text-white hover:text-text20" : ""
-            }`}
-          >
-            <span className="text-text20">•</span>
-            {category}
-          </span>
-        </li>
-      );
-    })}
-  </ul>
-
-  <div className="px-10">
-    <div className="h-1 w-0 bg-bg6 group-hover:w-full transition-all  ease-in-out duration-300"></div>
-  </div>
-
-  {/* Floating Component */}
-  <div className="absolute top-full px-10 w-full   z-20 hidden group-hover:block">
-    <div className="bg-bg1 w-full shadow-md">
-       <CategoryData />
-
+          <div className="bg-bg1 w-full shadow-md">
+            <CategoryData
+              subcategories={currentCategory.subcategory}
+              mainCategoryName={currentCategory.name}
+            />
+          </div>
+        </div>
+      )}
     </div>
-   
-  </div>
-</div>
   );
+
   return (
     <div className="flex">
       {/* <ul className="list-none flex items-center justify-center space-x-3   ">
