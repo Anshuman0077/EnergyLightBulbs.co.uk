@@ -24,7 +24,7 @@ export const CategoryData: React.FC<Props> = ({ subcategories, mainCategoryName 
 
         return (
           <div key={index} className={`flex flex-col mb-4 ${positionClass}`}>
-            <h3 className="font-semibold text-md border-b py-2 mb-2">{sub.name}</h3>
+            <h3 className="font-semibold text-md border-b py-2 mb-2 transition-all duration-500 ease-in-out hover:translate-x-2 text-text13 hover:text-text20 hover:opacity-80">{sub.name}</h3>
             <div className="flex flex-col gap-3">
               {sub.items.map((item, idx) => (
                 <div
