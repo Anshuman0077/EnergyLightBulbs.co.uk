@@ -1,5 +1,7 @@
 import React from "react";
 import { SubCategory } from "./categoryList";
+import { generateSlug } from "@/app/utility/slugy";
+import Link from "next/link";
 
 interface Props {
   subcategories: SubCategory[];
@@ -24,7 +26,7 @@ export const CategoryData: React.FC<Props> = ({ subcategories, mainCategoryName 
 
         return (
           <div key={index} className={`flex flex-col mb-4 ${positionClass}`}>
-            <h3 className="font-semibold text-md border-b py-2 mb-2 transition-all duration-500 ease-in-out hover:translate-x-2 text-text13 hover:text-text20 hover:opacity-80">{sub.name}</h3>
+            <Link href={`/${generateSlug(mainCategoryName)}`} className="font-semibold text-md border-b py-2 mb-2 transition-all duration-500 ease-in-out hover:translate-x-2 text-text13 hover:text-text20 hover:opacity-80">{sub.name}</Link>
             <div className="flex flex-col gap-3">
               {sub.items.map((item, idx) => (
                 <div
@@ -36,9 +38,9 @@ export const CategoryData: React.FC<Props> = ({ subcategories, mainCategoryName 
                     alt={item.imgName}
                     className="w-14 h-14 border p-1 border-border7 object-contain rounded transition-transform duration-500 ease-in-out hover:scale-105"
                   />
-                  <span className="text-xs transition-all duration-500 ease-in-out">
+                  <Link href={`/${generateSlug(mainCategoryName)}/${generateSlug(sub.name)}/${generateSlug(item.imgName)}`}  className="text-xs transition-all duration-500 ease-in-out">
                     {item.imgName}
-                  </span>
+                  </Link>
                 </div>
               ))}
             </div>

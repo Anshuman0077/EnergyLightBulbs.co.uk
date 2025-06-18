@@ -3,6 +3,8 @@
 import React, { useState, useRef } from "react";
 import { CategoryData } from "./categoryData";
 import { categoryList } from "./categoryList";
+import { generateSlug } from "@/app/utility/slugy";
+import Link from "next/link";
 
 export const Category = () => {
   const [selectedCategoryIndex, setSelectedCategoryIndex] = useState<
@@ -32,7 +34,7 @@ export const Category = () => {
           const isLastTwo = index >= categoryList.length - 2;
 
           return (
-            <li
+            <Link href={`/${generateSlug(category.name)}`}
               key={index}
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
@@ -48,7 +50,7 @@ export const Category = () => {
                 <span className="text-text20">•</span>
                 {category.name}
               </span>
-            </li>
+            </Link>
           );
         })}
       </ul>

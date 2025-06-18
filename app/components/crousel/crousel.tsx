@@ -1,6 +1,5 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
-import { FcPrevious, FcNext } from "react-icons/fc";
 import { GrNext, GrPrevious } from "react-icons/gr";
 
 const Carousel = () => {
@@ -44,13 +43,13 @@ const Carousel = () => {
 
   const handleDotClick = (index: number) => {
     updateSlide(index);
-    resetInterval(); // Restart autoplay after manual change
+    resetInterval();
   };
 
   const startAutoPlay = () => {
     intervalRef.current = setInterval(() => {
       handleNext();
-    }, 4000); // Every 4 seconds
+    }, 4000);
   };
 
   const resetInterval = () => {
@@ -61,7 +60,7 @@ const Carousel = () => {
   };
 
   useEffect(() => {
-    updateSlide(0); // Initialize
+    updateSlide(0);
     startAutoPlay();
 
     return () => {
@@ -72,11 +71,11 @@ const Carousel = () => {
   }, []);
 
   return (
-    <div className="relative w-full overflow-hidden">
+    <div className="relative w-full overflow-hidden ">
+      {/* Slide Track */}
       <div
         className="flex transition-transform duration-500 ease-in-out"
-        ref={trackRef}
-      >
+        ref={trackRef}>
         {images.map((src, index) => (
           <img
             key={index}
@@ -87,33 +86,35 @@ const Carousel = () => {
         ))}
       </div>
 
+      {/* Prev Button */}
       <button
-        className="absolute top-1/2 left-4 bg-gray-100 cursor-pointer opacity-50 hover:opacity-100 py-2 px-2 rounded  text-text18 hover:bg-gray-800 hover:text-white border-gray-600  transform -translate-y-1/2 z-10"
+        className="absolute top-1/2 left-4 bg-gray-100 cursor-pointer opacity-50 hover:opacity-100 py-2 px-2 rounded text-text18 hover:bg-gray-800 hover:text-white border-gray-600 transform -translate-y-1/2 z-10"
         onClick={() => {
           handlePrev();
           resetInterval();
-        }}
-      >
-        <GrPrevious size={30} />
+        }}>
+        <GrPrevious size={26} />
       </button>
+
+      {/* Next Button */}
       <button
-        className="absolute top-1/2 right-4 cursor-pointer transform -translate-y-1/2 z-10  bg-gray-100 py-2 rounded opacity-80 hover:opacity-100 px-2 text-text18  hover:bg-gray-800  hover:text-white border-gray-600 "
+        className="absolute top-1/2 right-4 cursor-pointer transform -translate-y-1/2 z-10 bg-gray-100 py-2 rounded opacity-80 hover:opacity-100 px-2 text-text18 hover:bg-gray-800 hover:text-white border-gray-600"
         onClick={() => {
           handleNext();
           resetInterval();
-        }}
-      >
-        <GrNext size={30} />
+        }}>
+        <GrNext size={26} />
       </button>
+
+      {/* Dots */}
       <div className="flex justify-center mt-6 gap-2">
         {images.map((_, index) => (
           <button
             key={index}
             onClick={() => handleDotClick(index)}
-            className={`h-3 w-3 rounded-xs  ${
+            className={`h-3 w-3 rounded-xs ${
               index === activeIndex ? "bg-bg8 opacity-50" : "bg-bg14"
-            }`}
-          />
+            }`}/>
         ))}
       </div>
     </div>

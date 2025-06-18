@@ -13,7 +13,7 @@ export default function Header() {
 
 
   return (
- <header className="bg-bg1 w-full">
+ <header className="bg-bg1 w-full px-18">
   <div className="flex w-full items-center">
    
     <div className="w-full">
