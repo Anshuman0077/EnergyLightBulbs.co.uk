@@ -1,6 +1,6 @@
 
 
-// ✅ Works as a server component
+
 export default async function ProductPage({ params }: { params: { category: string; subcategory: string; product: string } }) {
   // await if required in future
   return (
