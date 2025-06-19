@@ -9,7 +9,7 @@ import footorData from "@/app/data/footorData.json"
 export const Footer = () => {
   const [focued, setfocused] = useState(false);
   return (
-    <footer className="mt-2  w-full">
+    <footer className="mt-2  w-full px-18">
       <div className="flex flex-row items-start">
         <div className="w-full">
           <div className="w-full grid items-center  my-6 justify-center  ">
@@ -98,22 +98,22 @@ export const Footer = () => {
               </ul>
 
               <div>
-                <div className="flex">
+                <div className="flex ">
                   <div
-                    className={`bg-bg1 flex items-center w-full max-w-lg rounded-tl-md rounded-bl-md  border transition-all duration-300 ${
+                    className={`bg-bg1 flex items-center w-full max-w-lg rounded-tl-md  rounded-bl-md  border transition-all duration-300 ${
                       focued
                         ? "border border-border9 shadow-lg shadow-blue-custom"
                         : "border border-transparent"
                     }`}
-                  >
-                    <div className="rounded-tl-md  px-2">
+                   >
+                    <div className="rounded-tl-md  ">
                       <MdOutlineForwardToInbox size={20} />
                     </div>
                     <input
                       type="text"
                       name="search"
                       placeholder="Enter your email address"
-                      className="text-text4 bg-transparent focus:outline-none w-full py-2  placeholder:text-text14 placeholder:font-semibold placeholder:text-sm transition-all duration-300"
+                      className="text-text4 bg-transparent focus:outline-none w-full py-2 px-1 placeholder:text-text14 placeholder:font-semibold placeholder:text-xm transition-all duration-300"
                       onFocus={() => setfocused(true)}
                       onBlur={() => setfocused(false)}
                     />
