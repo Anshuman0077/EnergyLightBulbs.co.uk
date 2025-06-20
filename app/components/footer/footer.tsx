@@ -4,7 +4,7 @@ import { FaPhone } from "react-icons/fa6";
 import { MdOutlineForwardToInbox } from "react-icons/md";
 import { PiGreaterThan } from "react-icons/pi";
 import { useState } from "react";
-import footorData from "@/app/data/footorData.json"
+import footorData from "@/app/data/footorData.json";
 
 export const Footer = () => {
   const [focued, setfocused] = useState(false);
@@ -23,28 +23,28 @@ export const Footer = () => {
             <div className="grid grid-cols-4  gap-x-10 text-text8 font-light text-sm    hover:bg-bg8  ">
               <ul className="space-y-2">
                 <li>Energy Saving</li>
-                <li  >Compact Fluorescent</li>
-                <li >Halogen Bulbs</li>
+                <li>Compact Fluorescent</li>
+                <li>Halogen Bulbs</li>
                 <li>LEDs</li>
-                <li >R7s Halogen Linear J118/J78</li>
-                <li >Appliance Bulbs</li>
-                <li >Sodium Lamps</li>
-                <li >Metal Halide Lamps</li>
-                <li >Energy Saving Halogens</li>
-                <li >Low Voltage Bulbs</li>
+                <li>R7s Halogen Linear J118/J78</li>
+                <li>Appliance Bulbs</li>
+                <li>Sodium Lamps</li>
+                <li>Metal Halide Lamps</li>
+                <li>Energy Saving Halogens</li>
+                <li>Low Voltage Bulbs</li>
                 <li>Incandescent Decoration Light Bulbs</li>
               </ul>
               <ul className=" space-y-2">
                 <li>Fire Rated Down Lights</li>
                 <li>Ceiling Down Lights</li>
-                <li >Bathroom Lighting</li>
+                <li>Bathroom Lighting</li>
                 <li>Cabinet / Undershelf Lighting</li>
-                <li >Transformers / LED Drivers</li>
+                <li>Transformers / LED Drivers</li>
                 <li>Switches & Sockets</li>
                 <li>Socket Converters & Adaptors</li>
-                <li >LED Panels</li>
-                <li >Indoor Wall lights</li>
-                <li >Decoration string lights</li>
+                <li>LED Panels</li>
+                <li>Indoor Wall lights</li>
+                <li>Decoration string lights</li>
                 <li>Christmas Decorations</li>
                 <li>Emergency Lights</li>
                 <li>Commercial Lights</li>
@@ -79,7 +79,7 @@ export const Footer = () => {
                         href="/base-finder"
                         className="flex items-center bg-bg1  px-4 py-2 mt-4 rounded-md text-text14 font-semibold w-max"
                       >
-                        VIEW <PiGreaterThan className="ml-1 w-4 h-4" />
+                        FIND <PiGreaterThan className="ml-1 w-4 h-4" />
                       </a>
                     </div>
                     <div className="bg-bg7 p-5 rounded-md border-none">
@@ -90,7 +90,7 @@ export const Footer = () => {
                         href="/buyers-guide-led"
                         className="flex items-center bg-bg1  px-4 py-2 mt-4 rounded-md text-text14 font-semibold w-max"
                       >
-                        VIEW <PiGreaterThan className="ml-1 w-4 h-4" />
+                        READ MORE <PiGreaterThan className="ml-1 w-4 h-4" />
                       </a>
                     </div>
                   </div>
@@ -98,27 +98,30 @@ export const Footer = () => {
               </ul>
 
               <div>
-                <div className="flex ">
+                <div className="flex w-full max-w-2xl">
+                  {/* Input container */}
                   <div
-                    className={`bg-bg1 flex items-center w-full max-w-lg rounded-tl-md  rounded-bl-md  border transition-all duration-300 ${
+                    className={`flex items-center w-full border transition-all duration-300 rounded-l-md ${
                       focued
-                        ? "border border-border9 shadow-lg shadow-blue-custom"
-                        : "border border-transparent"
+                        ? "border-border9 shadow-lg shadow-blue-custom"
+                        : "border border-gray-300"
                     }`}
-                   >
-                    <div className="rounded-tl-md  ">
+                  >
+                    <span className="px-2 text-gray-500">
                       <MdOutlineForwardToInbox size={20} />
-                    </div>
+                    </span>
                     <input
-                      type="text"
+                      type="email"
                       name="search"
                       placeholder="Enter your email address"
-                      className="text-text4 bg-transparent focus:outline-none w-full py-2 px-1 placeholder:text-text14 placeholder:font-semibold placeholder:text-xm transition-all duration-300"
+                      className="w-full bg-transparent text-text4 py-2  focus:outline-none placeholder:text-text14 placeholder:font-semibold placeholder:text-xs"
                       onFocus={() => setfocused(true)}
                       onBlur={() => setfocused(false)}
                     />
                   </div>
-                  <button className="py-2 px-2 rounded-tr-md text-text1 rounded-br-md font-bold text-sm hover:bg-bg6 transition-colors duration-300">
+
+                  {/* Button */}
+                  <button className="px-2 py-2 bg-bg8 text-white text-sm font-bold rounded-r-md hover:bg-bg6 transition-all duration-300">
                     SUBSCRIBE
                   </button>
                 </div>
@@ -136,7 +139,10 @@ export const Footer = () => {
                     <p>01895 55 33 00</p>
                   </div>
                   <div className="flex items-center space-x-1 text-sm">
-                    <MdOutlineForwardToInbox size={20} className="text-text19" />
+                    <MdOutlineForwardToInbox
+                      size={20}
+                      className="text-text19"
+                    />
                     <p>orders@energylightbulbs.co.uk</p>
                   </div>
                 </div>
