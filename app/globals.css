@@ -79,7 +79,7 @@ body {
 }
 
 @layer utilities {
-  /* --- ✅ Background Colors --- */
+  /* --- Background Colors --- */
   .bg-bg1 {
     background-color: #ffffff;
   }
@@ -126,7 +126,7 @@ body {
     background-color: #000000;
   }
 
-  /* --- ✅ Text Colors --- */
+  /* ---  Text Colors --- */
   .text-text1 {
     color: #ffffff;
   }
@@ -188,7 +188,7 @@ body {
     color: #71bd1b;
   }
 
-  /* --- ✅ Border Colors --- */
+  /* ---  Border Colors --- */
   .border-border1 {
     border-color: #e2e2e2;
   }

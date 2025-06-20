@@ -14,8 +14,12 @@ export default function CategoryPage({
 
   return (
     <div className="min-h-screen w-full bg-bg1 pb-40 py-8 flex flex-col justify-center">
+      {/* <Link href={`/${category.slug}`} className="text-text18 hover:text-text6 transition-colors duration-300 text-sm px-26 pb-10 pt-6  ">Home</Link> */}
+       {/* <Link href={`/${category.name}/${category.slug}`}>{category.name}</Link> */}
       <div className="max-w-screen-xl mx-auto px-4">
+        
         <h1 className="text-2xl font-bold text-black mb-6">{category.name}</h1>
+         
 
         <div className="flex flex-col md:flex-row items-start gap-8">
           <div className="w-full md:w-64 border-2 rounded-md  ">
