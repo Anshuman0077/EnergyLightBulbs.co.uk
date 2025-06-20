@@ -118,7 +118,7 @@ export const Footer = () => {
                       onBlur={() => setfocused(false)}
                     />
                   </div>
-                  <button className="bg-bg8 py-2 px-2 rounded-tr-md text-text1 rounded-br-md font-bold text-sm hover:bg-bg6 transition-colors duration-300">
+                  <button className="py-2 px-2 rounded-tr-md text-text1 rounded-br-md font-bold text-sm hover:bg-bg6 transition-colors duration-300">
                     SUBSCRIBE
                   </button>
                 </div>
