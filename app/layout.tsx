@@ -74,7 +74,7 @@ export default function RootLayout({
               <BottomFoot />
             </div>
 
-            <div className="w-full bg-bg5 px-6 sm:px-12 lg:px-18 py-6 text-center text-sm text-text7 border-t border-border5">
+            <div className="w-full bg-bg5 px-6 sm:px-12 lg:px-18 py-6 text-center text-sm text-text7">
               <div className="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center">
                 <p>Copyright © 2025 Energy Light Bulbs Ltd.</p>
                 <img

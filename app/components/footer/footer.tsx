@@ -65,7 +65,7 @@ export const Footer = () => {
                         ENERGY CALCULATOR
                       </p>
                       <a
-                        href="/energy-calulator"
+                        href="/energy-calculator"
                         className="flex items-center bg-bg1  px-4 py-2 mt-4 rounded-md text-text14 font-semibold w-max"
                       >
                         VIEW <PiGreaterThan className="ml-1 w-4 h-4" />
