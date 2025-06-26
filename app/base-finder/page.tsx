@@ -1,8 +1,12 @@
 import React from "react";
+import { Breadcrumbs } from "../components/breadcrum/breadcrumbs";
 
 export default function baseFinderPage() {
   return (
     <section className="w-full max-w-screen-xl mx-auto px-6 py-10 bg-bg1 text-text18">
+      <div>
+        <Breadcrumbs/>
+      </div>
       <div className="space-y-6">
         <h1 className="text-3xl font-bold tracking-tight">Lamp Base Finder</h1>
 

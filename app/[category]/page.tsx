@@ -1,3 +1,4 @@
+import { Breadcrumbs } from "../components/breadcrum/breadcrumbs";
 import { categories } from "../components/data/categories";
 import Link from "next/link";
 
@@ -14,9 +15,15 @@ export default function CategoryPage({
 
   return (
     <div className="min-h-screen w-full bg-bg1 pb-40 py-8 flex flex-col justify-center">
+      
       {/* <Link href={`/${category.slug}`} className="text-text18 hover:text-text6 transition-colors duration-300 text-sm px-26 pb-10 pt-6  ">Home</Link> */}
        {/* <Link href={`/${category.name}/${category.slug}`}>{category.name}</Link> */}
       <div className="max-w-screen-xl mx-auto px-4">
+        <div className="mb-6">
+           <Breadcrumbs/>
+
+        </div>
+       
         
         <h1 className="text-2xl font-bold text-black mb-6">{category.name}</h1>
          
