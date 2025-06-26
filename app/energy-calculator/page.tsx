@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { Breadcrumbs } from "../components/breadcrum/breadcrumbs";
 
 export default function EnergyCalculatorPage() {
   const wattRef = useRef<HTMLInputElement>(null);
@@ -21,13 +22,15 @@ export default function EnergyCalculatorPage() {
     const hours = parseFloat(hoursRef.current?.value || "0");
     const bulbs = parseFloat(bulbsRef.current?.value || "0");
 
-    const saverWatt = 20;
+    if (!watt || !cost || !hours || !bulbs) return;
+
+    const saverWatt = parseFloat((watt * 0.2).toFixed(1));
 
     const annualCurrent = ((watt * hours * bulbs * 365) / 1000) * (cost / 100);
     const annualSaving =
       ((saverWatt * hours * bulbs * 365) / 1000) * (cost / 100);
     const yearlySavings = annualCurrent - annualSaving;
-    const lifetimeSavings = (yearlySavings / ((hours * 365) / 8000)) * 8000;
+    const lifetimeSavings = yearlySavings * (8000 / (hours * 365));
 
     if (currentCostRef.current)
       currentCostRef.current.textContent = annualCurrent.toFixed(2);
@@ -52,10 +55,7 @@ export default function EnergyCalculatorPage() {
   return (
     <main className="w-full mx-auto py-10 px-6 text-black font-sans">
       {/* Breadcrumb */}
-      {/* <nav className="text-sm text-gray-500 mb-4">
-        <span className="text-blue-500">Home</span> &gt;{" "}
-        <span className="text-orange-500 font-medium">Energy Calculator</span>
-      </nav> */}
+      <Breadcrumbs />
 
       {/* Title */}
       <h1 className="text-2xl font-bold mb-6 uppercase tracking-wide">
@@ -148,9 +148,10 @@ export default function EnergyCalculatorPage() {
       <div className="grid grid-cols-[auto_1fr] gap-x-30 gap-y-3 text-sm">
         {/* Annual Cost */}
         <div className="">
-          <span className="">Annual cost of running current</span>
+          <span className="">Annual cost of running</span>
           <br />
-          <span ref={wattsLabelRef} className="font-bold">
+          current
+          <span ref={wattsLabelRef} className=" ">
             100
           </span>
           <span> W bulbs:</span>
@@ -185,48 +186,68 @@ export default function EnergyCalculatorPage() {
 
         {/* Annual Savings */}
         <span className="self-start font-bold uppercase">Annual Savings:</span>
-        <div>
-          <span
-            ref={yearlySavingsRef}
-            className="text-xl font-semibold"
-          >
-            £23.36
+        <div className="">
+          £{" "}
+          <span ref={yearlySavingsRef} className="text-md  font-semibold">
+            23.36
           </span>
         </div>
 
         {/* Lifetime Savings */}
-        <span className="self-start">
+        <span className="self-start ">
           Total savings made over life
           <br />
           of Energy saving bulb
           <br />
           Based on 8000 hour bulb:
         </span>
-        <div>
+        <div className="pt-3">
           £
-          <span ref={lifetimeSavingsRef} className="ml-1">
+          <span ref={lifetimeSavingsRef} className="ml-1 ">
             128.00
           </span>
         </div>
       </div>
 
-      <div className="mt-6">
+      <div className="mt-6 content-center flex w-1/2 mx-26 items-center justify-around">
         <button
           type="button"
           onClick={handleCalculate}
-          className="bg-sky-500 hover:bg-sky-600 text-white py-2 px-4 rounded transition-all"
+          className="bg-bg16 hover:bg-bg17 text-white py-2 px-6 rounded transition-all shadow-lg  border-border12 border-1 hover:opacity-90 box-shadow-lg hover:shadow-xl  text-text1 font-medium cursor-pointer"
         >
           Calculate Savings
         </button>
       </div>
 
-      <p className="text-xs text-gray-500 mt-8">
+      <p className="text-md text-text18 mt-8">
         Costs and savings calculated based upon typical domestic tariff of 10p
-        per unit (kWh).
+        per unit (kWhr).
         <br />
         Please note that this is an approximate value and that this exact power
         rating may not be available.
       </p>
+      <div className="mt-4 space-y-4 text-text18 text-md">
+        <h2 className="text-2xl text-text18 font-bold">
+          How Much Could YOU Save?
+        </h2>
+        <p>
+          Some energy saving bulbs can be more costly than traditional
+          incandescent bulbs, energy saving variants use revolutionary
+          manufacturing methods to cut your electricity consumption and save you
+          money. Energy saving light bulbs typically save around 80% more
+          electricity than incandescent bulbs.
+        </p>
+        <p>
+          Use our energy saving calculator to work out the savings you could
+          make over the life of the bulbs by replacing normal incandescent bulbs
+          with energy saving equivalent bulbs.We have filled in average figures
+          for you just in case you're not sure about your energy price.
+        </p>
+        <p>
+          There are current government drives to reduce our carbon emissions and
+          we all have a responsibility to try and look after the environment.
+        </p>
+      </div>
     </main>
   );
 }

@@ -1,6 +1,7 @@
 import { categories } from "@/app/components/data/categories";
 import Link from "next/link";
 import Image from "next/image";
+import { Breadcrumbs } from "@/app/components/breadcrum/breadcrumbs";
 
 export default function SubCategoryPage({
   params,
@@ -20,9 +21,14 @@ export default function SubCategoryPage({
     <div className="min-h-screen w-full bg-bg1 pb-40 py-8">
       
       <div className="max-w-screen-xl mx-auto px-4">
+        <div className="mb-6">
+          <Breadcrumbs/>
+
+        </div>
+        
         {/* <Link href={`${category}`}>{category.name}</Link> */}
         {/* Subcategory Title */}
-        <h1 className="text-2xl font-bold text-black mb-6">
+        <h1 className="text-2xl font-bold text-black mb-4">
           {subcategory.name}
         </h1>
 

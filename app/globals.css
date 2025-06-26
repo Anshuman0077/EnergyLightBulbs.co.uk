@@ -16,6 +16,8 @@
   --bg-13: #3a3a3a;
   --bg-14: #333333;
   --bg-15: #000000;
+  --bg-16: #2eb3d4;
+  --bg-17: #006bb4;
 
   --text-1: #ffffff;
   --text-2: #c1c1c1;
@@ -49,6 +51,7 @@
   --border-9: #1979c3;
   --border-10: #414141;
   --border-11: #000000;
+  --border-12: #40bdda;
 }
 
 @theme inline {
@@ -124,6 +127,12 @@ body {
   }
   .bg-bg15 {
     background-color: #000000;
+  }
+  .bg-bg16 {
+    background-color: #2eb3d4;
+  }
+  .bg-bg17 {
+    background-color: #006bb4;
   }
 
   /* ---  Text Colors --- */
@@ -222,6 +231,9 @@ body {
   .border-border11 {
     border-color: #000000;
   }
+  .border-border12 {
+    border-color:#40bdda;
+  }
 }
 
 @layer utilities {
@@ -234,6 +246,9 @@ body {
 
   .hover\:bg-bg9:hover {
     background-color: #ff740d;
+  }
+  .hover\:bg-bg17:hover {
+    background-color: #006bb4;
   }
   .shadow-blue-custom {
     box-shadow: 0 1.5px 5px 1px var(--text-11);

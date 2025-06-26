@@ -1,9 +1,11 @@
 import { ledFaqData } from "../components/ledfaqData";
 import { buyersGuideLedContentData } from "../components/buyerContentData";
+import { Breadcrumbs } from "../components/breadcrum/breadcrumbs";
 export default function buyersGuideLedPage() {
   return (
     <section>
       <div className="w-full  px-6 py-10 bg-bg1 text-text18">
+        <Breadcrumbs/>
         <div className="space-y-6">
           {/* Title */}
           <h1 className="text-3xl font-bold tracking-tight">
