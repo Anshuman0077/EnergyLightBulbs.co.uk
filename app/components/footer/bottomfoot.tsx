@@ -30,7 +30,7 @@ export const BottomFoot = () => {
             Terms
           </a>
           <span>|</span>
-          <a href="/return-policy" className="hover:text-text6">
+          <a href="/returns-policy" className="hover:text-text6">
             Return Policy
           </a>
         </div>

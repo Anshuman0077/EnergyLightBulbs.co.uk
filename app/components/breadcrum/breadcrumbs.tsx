@@ -4,21 +4,27 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { PiGreaterThan } from "react-icons/pi";
+import { breadcrumbsLabel } from "./breadcrumbsLabel"
 
 export const Breadcrumbs = () => {
   const pathName = usePathname();
   const pathSegments = pathName.split("/").filter(Boolean);
 
-  const makeLabel = (segment: string) =>
-    segment
-      .replace(/-/g, " ")
-      .replace(/\b\w/g, (char) => char.toUpperCase());
-
+  // Create full path hrefs for all segments
   const breadcrumbs = [
     { label: "Home", href: "/", isHome: true },
     ...pathSegments.map((segment, index) => {
       const href = "/" + pathSegments.slice(0, index + 1).join("/");
-      return { label: makeLabel(segment), href, isHome: false };
+
+      // Custom label from map OR fallback to auto-generated label
+      const customLabel = breadcrumbsLabel[href];
+      const label =
+        customLabel ||
+        segment
+          .replace(/-/g, " ")
+          .replace(/\b\w/g, (char) => char.toUpperCase());
+
+      return { label, href, isHome: false };
     }),
   ];
 
