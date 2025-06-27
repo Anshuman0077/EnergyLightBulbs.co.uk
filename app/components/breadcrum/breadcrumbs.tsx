@@ -4,29 +4,40 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { PiGreaterThan } from "react-icons/pi";
-import { breadcrumbsLabel } from "./breadcrumbsLabel"
+import { breadcrumbsLabel } from "./breadcrumbsLabel";
 
 export const Breadcrumbs = () => {
   const pathName = usePathname();
   const pathSegments = pathName.split("/").filter(Boolean);
 
-  // Create full path hrefs for all segments
-  const breadcrumbs = [
-    { label: "Home", href: "/", isHome: true },
-    ...pathSegments.map((segment, index) => {
-      const href = "/" + pathSegments.slice(0, index + 1).join("/");
+  const customFullLabel = breadcrumbsLabel[pathName];
 
-      // Custom label from map OR fallback to auto-generated label
-      const customLabel = breadcrumbsLabel[href];
-      const label =
-        customLabel ||
-        segment
-          .replace(/-/g, " ")
-          .replace(/\b\w/g, (char) => char.toUpperCase());
+  let breadcrumbs;
 
-      return { label, href, isHome: false };
-    }),
-  ];
+  if (customFullLabel) {
+   
+    breadcrumbs = [
+      { label: "Home", href: "/", isHome: true },
+      { label: customFullLabel, href: pathName, isHome: false },
+    ];
+  } else {
+   
+    breadcrumbs = [
+      { label: "Home", href: "/", isHome: true },
+      ...pathSegments.map((segment, index) => {
+        const href = "/" + pathSegments.slice(0, index + 1).join("/");
+        const customLabel = breadcrumbsLabel[href];
+
+        const label =
+          customLabel ||
+          segment
+            .replace(/-/g, " ")
+            .replace(/\b\w/g, (char) => char.toUpperCase());
+
+        return { label, href, isHome: false };
+      }),
+    ];
+  }
 
   return (
     <nav className="text-sm flex items-center flex-wrap">
@@ -34,9 +45,9 @@ export const Breadcrumbs = () => {
         const isLast = index === breadcrumbs.length - 1;
 
         return (
-          <span key={crumb.href} className="flex items-center space-x-1">
+          <span key={crumb.href} className="flex items-center space-x-4">
             {index !== 0 && (
-              <span className="text-text8 mx-1">
+              <span className="text-text8 mx-3">
                 <PiGreaterThan size={12} className="mt-0.5" />
               </span>
             )}

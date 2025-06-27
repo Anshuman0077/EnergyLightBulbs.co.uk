@@ -23,11 +23,8 @@ export default function SubCategoryPage({
       <div className="max-w-screen-xl mx-auto px-4">
         <div className="mb-6">
           <Breadcrumbs/>
-
         </div>
         
-        {/* <Link href={`${category}`}>{category.name}</Link> */}
-        {/* Subcategory Title */}
         <h1 className="text-2xl font-bold text-black mb-4">
           {subcategory.name}
         </h1>
