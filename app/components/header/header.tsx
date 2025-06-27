@@ -75,7 +75,7 @@ export default function Header() {
             </div>
 
             {/* Account & Basket Dropdowns */}
-            <div className="flex items-center space-x-3 mt-2.5 mx-3">
+            <div className="flex items-center space-x-3 mt-2.5 mx-3 z-[60] relative ">
               {/* Account */}
               <div className="relative" ref={accountRef}>
                 <div
@@ -88,10 +88,10 @@ export default function Header() {
                   <MdArrowDropDown size={28} className="text-text14" />
                 </div>
                 {showAccount && (
-                  <div className="absolute top-full right-0 left-0 mt-2 w-48 bg-white text-center shadow-md rounded-md border border-border5 z-50">
+                  <div className="absolute  top-full right-0 left-0 mt-2 w-48 bg-white text-center shadow-md rounded-md border border-border5 z-50">
                     <div className="absolute -top-2 right-6 w-4 h-4 bg-white rotate-45 border-l border-t border-gray-300"></div>
                     <a
-                      href="/account"
+                      href="/customer/account/login"
                       className="block px-4 py-2 text-sm text-text14 hover:text-text6"
                     >
                       My Account
@@ -103,13 +103,13 @@ export default function Header() {
                       Checkout
                     </a>
                     <a
-                      href="/Register"
+                      href="/customer/account/create"
                       className="block px-4 py-2 text-sm text-text14 hover:text-text6"
                     >
                       Register
                     </a>
                     <a
-                      href="/login"
+                      href="/customer/account/login"
                       className="block px-4 py-2 text-sm text-text14 hover:text-text6"
                     >
                       Log In

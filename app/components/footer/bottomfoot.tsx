@@ -37,15 +37,15 @@ export const BottomFoot = () => {
 
         {/* Right Links */}
         <div className="flex flex-wrap justify-center gap-x-3 text-sm text-text7">
-          <a href="/login" className="hover:text-text6">
+          <a href="/customer/account/login" className="hover:text-text6">
             Login
           </a>
           <span>|</span>
-          <a href="/sign-up" className="hover:text-text6">
+          <a href="/customer/account/create" className="hover:text-text6">
             Sign Up
           </a>
           <span>|</span>
-          <a href="/my-orders-status" className="hover:text-text6">
+          <a href="/sales/guest/form" className="hover:text-text6">
             My Orders Status
           </a>
         </div>

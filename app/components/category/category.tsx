@@ -12,7 +12,6 @@ export const Category = () => {
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const pathname = usePathname();
 
-  // Auto-close dropdown on route change
   useEffect(() => {
     setSelectedCategoryIndex(null);
   }, [pathname]);
@@ -25,47 +24,49 @@ export const Category = () => {
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setSelectedCategoryIndex(null);
-    }, 200); // smaller delay for smoother UX
+    }, 200);
   };
 
+  // ✅ Precomputed version to avoid hydration mismatch
+  const processedCategoryList = categoryList.map((category, index) => ({
+    ...category,
+    isLastTwo: index >= categoryList.length - 2,
+    slug: generateSlug(category.name),
+  }));
+
   const currentCategory =
-    selectedCategoryIndex !== null ? categoryList[selectedCategoryIndex] : null;
+    selectedCategoryIndex !== null ? processedCategoryList[selectedCategoryIndex] : null;
 
   return (
-    <div className="relative w-full group z-50">
+    <div className="relative w-full group z-40 overflow-visible">
       {/* Category List */}
-      <ul className="flex items-center justify-center gap-x-1 px-10 z-10 relative">
-        {categoryList.map((category, index) => {
-          const isLastTwo = index >= categoryList.length - 2;
-          const slug = generateSlug(category.name);
-
-          return (
-            <li
-              key={`${slug}-${index}`} // ✅ fixed unique key using slug + index
-              className={`relative min-h-[60px] px-3 transition-all duration-300 ${
-                isLastTwo ? "hover:bg-bg9" : " "
-              }`}
-              onMouseEnter={() => handleMouseEnter(index)}
-              onMouseLeave={handleMouseLeave}
-            >
-              <Link href={`/${slug}`}>
-                <span
-                  className={`flex items-center gap-1 my-4 text-sm font-medium cursor-pointer transition-all duration-300 ease-in ${
-                    isLastTwo ? "text-white " : "hover:text-text20"
-                  }`}
-                >
-                  <span className="text-text20">•</span>
-                  {category.name}
-                </span>
-              </Link>
-            </li>
-          );
-        })}
+      <ul className="flex items-center justify-center space-x-1 px-10 relative z-10">
+        {processedCategoryList.map((category, index) => (
+          <li
+            key={`${category.slug}-${index}`}
+            className={`relative min-h-[60px] flex items-center px-3 transition-all duration-300 hover:text-text20 ${
+              category.isLastTwo ? "hover:bg-bg9 mb-1 hover:text-text20" : ""
+            }`}
+            onMouseEnter={() => handleMouseEnter(index)}
+            onMouseLeave={handleMouseLeave}
+          >
+            <Link href={`/${category.slug}`}>
+              <span
+                className={`flex items-center gap-3 justify-center text-sm font-medium cursor-pointer transition-all duration-300 ease-in ${
+                  category.isLastTwo ? "hover:text-text20" : ""
+                }`}
+              >
+                <span className="text-text20">•</span>
+                {category.name}
+              </span>
+            </Link>
+          </li>
+        ))}
       </ul>
 
-      {/* Underline animation */}
-      <div className="px-10">
-        <div className="h-1 w-0 bg-bg6 group-hover:w-full transition-all ease-in-out duration-300" />
+      {/* Underline animation moved behind the category list */}
+      <div className="absolute left-0 bottom-0 w-full h-1 bg-transparent z-0">
+        <div className="bg-bg6 h-full w-0 group-hover:w-[calc(100%-5rem)] mx-10 transition-all ease-in-out duration-300" />
       </div>
 
       {/* Dropdown */}
@@ -73,9 +74,9 @@ export const Category = () => {
         <div
           onMouseEnter={() => handleMouseEnter(selectedCategoryIndex!)}
           onMouseLeave={handleMouseLeave}
-          className="absolute top-full px-10 w-full z-50"
+          className="absolute top-full left-0 w-full z-50"
         >
-          <div className="bg-bg1 w-full shadow-md ">
+          <div className="bg-bg1 w-full shadow-md px-10">
             <CategoryData
               subcategories={currentCategory.subcategory}
               mainCategoryName={currentCategory.name}

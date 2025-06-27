@@ -5,7 +5,6 @@ export default function PrivancyPage() {
   return (
 <section className="w-full flex min-h-screen text-text18 px-8 py-10">
   <div className="w-full mx-auto">
-    {/* Breadcrumb */}
     <div className="mb-6">
       <Breadcrumbs />
     </div>
