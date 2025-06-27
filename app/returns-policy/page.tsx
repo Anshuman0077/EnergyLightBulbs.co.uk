@@ -3,7 +3,7 @@ import { Breadcrumbs } from "../components/breadcrum/breadcrumbs";
 
 export default function ReturnPolicyPage() {
   return (
-    <section className="w-full flex min-h-screen text-text18 py-10 px-6 sm:px-10 md:px-20 tracking-tighter leading-4">
+    <section className="w-full flex min-h-screen text-text18 py-10 px-6  tracking-tighter leading-4">
       <div className=" w-full mx-auto">
         <div className="mb-6">
           <Breadcrumbs />
