@@ -232,7 +232,7 @@ body {
     border-color: #000000;
   }
   .border-border12 {
-    border-color:#40bdda;
+    border-color: #40bdda;
   }
 }
 
@@ -249,6 +249,12 @@ body {
   }
   .hover\:bg-bg17:hover {
     background-color: #006bb4;
+  }
+  .hover\:bg-bg13:hover {
+    background-color: #3a3a3a;
+  }
+  .hover\:bg-bg5:hover {
+     background-color: #eeeeee
   }
   .shadow-blue-custom {
     box-shadow: 0 1.5px 5px 1px var(--text-11);
@@ -269,8 +275,7 @@ body {
   }
 
   .hover\:side-Only:hover {
-     box-shadow:
-      12px 0 15px -8px rgba(0, 0, 0, 0.15),
-     -12px 0 15px -8px rgba(0, 0, 0, 0.15);
+    box-shadow: 12px 0 15px -8px rgba(0, 0, 0, 0.15),
+      -12px 0 15px -8px rgba(0, 0, 0, 0.15);
   }
 }

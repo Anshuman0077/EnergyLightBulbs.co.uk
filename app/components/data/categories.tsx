@@ -7,9 +7,9 @@ export const categories = categoryList.map((category) => ({
   subcategory: category.subcategory.map((sub) => ({
     ...sub,
     slug: generateSlug(sub.name),
-    items: sub.items.map((item, itemIndex) => ({
+    items: sub.items.map((item) => ({
       ...item,
-      slug: generateSlug(item.imgName, itemIndex),
+      slug: generateSlug(item.imgName),
     })),
   })),
 }));
