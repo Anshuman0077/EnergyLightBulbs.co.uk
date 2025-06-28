@@ -1,6 +1,6 @@
-import { ledFaqData } from "../components/ledfaqData";
-import { buyersGuideLedContentData } from "../components/buyerContentData";
-import { Breadcrumbs } from "../components/breadcrum/breadcrumbs";
+import { ledFaqData } from "../../components/ledfaqData";
+import { buyersGuideLedContentData } from "../../components/buyerContentData";
+import { Breadcrumbs } from "../../components/breadcrum/breadcrumbs";
 export default function buyersGuideLedPage() {
   return (
     <section>

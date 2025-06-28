@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { Breadcrumbs } from "../components/breadcrum/breadcrumbs";
+import { Breadcrumbs } from "../../components/breadcrum/breadcrumbs";
 
 export default function EnergyCalculatorPage() {
   const wattRef = useRef<HTMLInputElement>(null);
