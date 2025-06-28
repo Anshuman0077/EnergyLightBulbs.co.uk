@@ -7,12 +7,12 @@ export default function CheckoutPage() {
   const [Qty, setQty] = useState("1");
 
   return (
-    <section className="text-text18 w-full px-4 py-6">
+    <section  id="shipping" className="text-text18 w-full px-4 py-6">
       {/* Title and Checkout Button */}
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-2xl font-bold">SHOPPING CART</h1>
         <a
-          href="/checkout/#shipping"
+          href="/checkout/shipping"
           className="px-14 py-4 bg-[#7ac709] hover:bg-bg13 text-white font-semibold text-lg rounded shadow-xl transition-all duration-300"
         >
           PROCEED TO CHECKOUT
