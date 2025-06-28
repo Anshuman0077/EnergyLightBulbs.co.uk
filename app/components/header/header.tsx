@@ -158,13 +158,15 @@ export default function Header() {
                             </span>
                           </div>
                         </div>
+                        <div className="flex w-full items-center justify-center mt-4">
+                          <a
+                            href="/checkout/#shipping"
+                            className="px-16 py-3 bg-[#7ac709] hover:bg-bg13 text-white font-semibold text-lg rounded shadow-xl transition-all duration-300"
+                          >
+                            PROCEED TO CHECKOUT
+                          </a>
+                        </div>
 
-                        <a
-                          href="/checkout/#shipping"
-                          className="px-14 py-4 bg-[#7ac709] hover:bg-bg13 text-white font-semibold text-lg rounded shadow-xl transition-all duration-300"
-                        >
-                          PROCEED TO CHECKOUT
-                        </a>
                         {/* PayPal Checkout Image */}
                         <div className="w-full flex items-center justify-center mt-3 mb-5">
                           <img
