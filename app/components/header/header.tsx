@@ -96,7 +96,7 @@ export default function Header() {
                       My Account
                     </a>
                     <a
-                      href="/checkout"
+                      href="/checkout/#shipping"
                       className="block px-4 py-2 text-sm text-text14 hover:text-text6"
                     >
                       Checkout
@@ -219,9 +219,9 @@ export default function Header() {
                                     name="qty"
                                     type="text"
                                     value={Qty}
+                                    label=""
                                     onchange={(e) => setQty(e.target.value)}
                                     className="w-16 h-8 px-2 border border-gray-300 rounded"
-                                    label=""
                                   />
                                 </div>
 
@@ -255,26 +255,21 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Search Box */}
+         
           <div className="flex w-full justify-end mt-4">
-            <div
-              className={`flex items-center w-full max-w-xl px-4 border transition-all duration-300 ${
-                isFocused
-                  ? "border-border9 shadow-lg shadow-blue-custom"
-                  : "border-border5"
-              }`}
-            >
-              <input
+            <div className="relative w-full max-w-xl">
+              {/* Input field */}
+              <Input
                 type="text"
                 name="search"
                 placeholder="Search entire store here..."
-                className="text-text4 bg-transparent focus:outline-none w-full py-3 px-1 placeholder:font-bold placeholder:text-text18 placeholder:text-sm transition-all duration-300"
-                onFocus={() => setIsFocused(true)}
-                onBlur={() => setIsFocused(false)}
+                className="w-full py-3 pl-4 pr-12 rounded-md border border-border4 text-text4 bg-white shadow-sm placeholder:font-bold placeholder:text-text18 placeholder:text-sm focus:outline-none"
+                label=""
               />
+
               <IoSearch
-                size={22}
-                className={`ml-2 transition-colors duration-300 ${
+                size={20}
+                className={`absolute right-4 top-1/2 -translate-y-1/2 transition-colors duration-300 ${
                   isFocused ? "text-text12" : "text-text3"
                 }`}
               />
