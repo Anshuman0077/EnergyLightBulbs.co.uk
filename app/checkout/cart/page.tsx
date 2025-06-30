@@ -9,10 +9,11 @@ export default function CheckoutPage() {
   return (
     <section  id="shipping" className="text-text18 w-full px-4 py-6">
       {/* Title and Checkout Button */}
-      <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold">SHOPPING CART</h1>
+       <h1 className="text-2xl font-bold">SHOPPING CART</h1>
+      <div className="flex items-center justify-end mb-6">
+       
         <a
-          href="/checkout/shipping"
+          href="/checkout/#shipping"
           className="px-14 py-4 bg-[#7ac709] hover:bg-bg13 text-white font-semibold text-lg rounded shadow-xl transition-all duration-300"
         >
           PROCEED TO CHECKOUT
@@ -67,7 +68,7 @@ export default function CheckoutPage() {
         </div>
 
         {/* Action Icons */}
-        <div className="col-span-12 flex justify-end px-20 gap-4 mt-4 text-lg text-text16">
+        <div className="col-span-12 flex justify-end pr-10 gap-4 mt-4 text-lg text-text16">
           <span title="Edit" className="cursor-pointer">
             <MdEdit />
           </span>
@@ -85,10 +86,10 @@ export default function CheckoutPage() {
         </button>
 
         <div className="flex gap-4 text-text16 font-light  text-sm">
-          <button className="px-4 py-2 hover:text-text6 transition-all  delay-200 ease-in">
+          <a href="/" className="px-4 py-2 hover:text-text6 transition-all  delay-200 ease-in">
             CONTINUE SHOPPING
             <div className="border-b-1 w-full flex items-center justify-center"></div>
-          </button>
+          </a>
 
           <button className="px-4 py-2 bg-bg3 transition-all delay-200 ease-in-out border border-border3  hover:bg-bg5 text-sm font-medium rounded">
             Update Shopping Cart
@@ -97,7 +98,7 @@ export default function CheckoutPage() {
       </div>
 
       {/* Order Summary */}
-      <div className="max-w-sm ml-auto border border-gray-200 rounded p-4 text-sm space-y-6">
+      <div className="max-w-sm ml-auto border border-gray-200  bg-bg3 p-4 text-sm space-y-6">
         <div className="flex justify-between">
           <span className="text-gray-700">SUBTOTAL</span>
           <span>£24.16 (Excl. Tax)</span>
