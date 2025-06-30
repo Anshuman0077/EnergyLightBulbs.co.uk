@@ -35,17 +35,26 @@ export default function ShippingPage() {
       </div>
 
       {/* Progress Steps */}
-      <div className="relative flex items-center w-full mb-10 ">
-        <div className="absolute top-4 w-1/4 h-2 bg-bg8 rounded-full" />
-        <div className="flex justify-around w-1/4 relative z-10">
-          <div className="flex flex-col items-center">
-            <div className="w-10 h-10 rounded-full bg-bg1 text-text18 flex items-center justify-center text-md font-bold border-8 border-border8">
+      <div className="relative flex items-center w-full mb-10">
+        {/* Full Progress Bar Container */}
+        <div className="absolute top-4 left-0 h-2.5 w-1/4 bg-bg5 rounded-full overflow-hidden">
+          {/* Completed part (50%) */}
+          <div className="h-full bg-bg10 w-1/2"></div>
+        </div>
+
+        {/* Steps */}
+        <div className="flex justify-around w-1/4  relative z-10">
+          {/* Step 1: Shipping */}
+          <div className="flex flex-col items-center ">
+            <div className="w-12 h-12 rounded-full bg-bg1 text-text18 flex items-center justify-center text-md font-bold border-8 border-border13">
               ✓
             </div>
             <span className="text-lg font-bold text-text16">Shipping</span>
           </div>
-          <div className="flex flex-col items-center">
-            <div className="w-10 h-10 rounded-full bg-white text-text16 flex items-center justify-center text-md font-bold border-8 border-border19">
+
+          {/* Step 2: Review */}
+          <div className="flex flex-col items-center ">
+            <div className="w-12 h-12 rounded-full  text-text16 bg-bg1 flex items-center justify-center text-md font-bold border-8 border-border1">
               2
             </div>
             <span className="text-lg font-medium text-text16">
@@ -54,7 +63,6 @@ export default function ShippingPage() {
           </div>
         </div>
       </div>
-
       {/* Section Title */}
       <div className="flex flex-col items-start w-full mb-6">
         <h1 className="text-2xl font-semibold mb-2">Shipping Address</h1>

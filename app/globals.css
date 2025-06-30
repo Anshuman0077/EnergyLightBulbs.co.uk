@@ -234,6 +234,9 @@ body {
   .border-border12 {
     border-color: #40bdda;
   }
+  .border-border13 {
+    border-color: #ff5501;
+  }
 }
 
 @layer utilities {
