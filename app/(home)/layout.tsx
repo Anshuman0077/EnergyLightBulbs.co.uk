@@ -19,14 +19,14 @@ export default function WithUILayout({
       {!isShippingPage && (
         <>
           <div className="w-full border-gray-200">
-            <div className="max-w-screen-2xl mx-auto w-full">
+            <div className="mx-auto w-full">
               <Header />
             </div>
           </div>
 
-          <div className="w-full bg-bg14 mt-4">
+          {/* <div className="w-full bg-bg14 mt-4">
             <Category />
-          </div>
+          </div> */}
         </>
       )}
 
@@ -38,7 +38,7 @@ export default function WithUILayout({
 
       {!isShippingPage && (
         <footer className="w-full bg-bg5 border-t-3 border-border6 mt-4">
-          <div className="max-w-screen-2xl mx-auto w-full px-18">
+          {/* <div className="max-w-screen-2xl mx-auto w-full px-18">
             <Footer />
           </div>
 
@@ -46,10 +46,10 @@ export default function WithUILayout({
             <div className="w-full max-w-screen-2xl mx-auto px-18">
               <BottomFoot />
             </div>
-          </div>
+          </div> */}
 
           {/* Copyright Section — Matches Category Width */}
-          <div className="w-full bg-bg5 py-6 text-sm text-text7">
+          {/* <div className="w-full bg-bg5 py-6 text-sm text-text7">
             <div className="w-full max-w-screen-2xl mx-auto px-18 flex flex-col md:flex-row justify-between items-center">
               <p>Copyright © 2025 Energy Light Bulbs Ltd.</p>
               <img
@@ -58,7 +58,7 @@ export default function WithUILayout({
                 className="mt-4 md:mt-0 w-72"
               />
             </div>
-          </div>
+          </div> */}
         </footer>
       )}
     </div>
