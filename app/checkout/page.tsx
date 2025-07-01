@@ -22,10 +22,13 @@ export default function ShippingPage() {
     <main className="min-h-screen bg-white text-black w-full px-6 sm:px-12 lg:px-20 py-6">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
-        <img
-          src="https://doo9vxlv0gkqf.cloudfront.net/media/logo/default/LOGO_ELB_update_100122.jpg"
-          alt="EnergyLightBulbs.co.uk Logo"
-        />
+        <a href="/">
+          <img
+            src="https://doo9vxlv0gkqf.cloudfront.net/media/logo/default/LOGO_ELB_update_100122.jpg"
+            alt="EnergyLightBulbs.co.uk Logo"
+          />
+        </a>
+
         <a
           href="/customer/account/create"
           className="text-sm text-blue-600 hover:underline"
@@ -181,7 +184,7 @@ export default function ShippingPage() {
 
             <div className="text-xs flex flex-col space-y-4">
               {/* Option 1 */}
-              <label className="flex items-start space-x-2 cursor-pointer hover:bg-gray-50 p-2 rounded-md transition">
+              <label className="flex items-start space-x-2 cursor-pointer  p-2 rounded-md transition">
                 <input
                   type="radio"
                   name="shipping"
@@ -198,7 +201,7 @@ export default function ShippingPage() {
               <div className="border-t border-border4" />
 
               {/* Option 2 */}
-              <label className="flex items-start space-x-2 cursor-pointer hover:bg-gray-50 p-2 rounded-md transition">
+              <label className="flex items-start space-x-2 cursor-pointer  p-2 rounded-md transition">
                 <input
                   type="radio"
                   name="shipping"
@@ -217,7 +220,7 @@ export default function ShippingPage() {
               <div className="border-t border-border4" />
 
               {/* Option 3 */}
-              <label className="flex items-start space-x-2 cursor-pointer hover:bg-gray-50 p-2 rounded-md transition">
+              <label className="flex items-start space-x-2 cursor-pointer p-2 rounded-md transition">
                 <input
                   type="radio"
                   name="shipping"

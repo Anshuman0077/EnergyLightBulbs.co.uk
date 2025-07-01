@@ -42,12 +42,15 @@ export default function WithUILayout({
             <Footer />
           </div>
 
-          <div className="py-3 max-w-screen-2xl mx-auto">
-            <BottomFoot />
+          <div className="w-full bg-bg1">
+            <div className="w-full max-w-screen-2xl mx-auto px-18">
+              <BottomFoot />
+            </div>
           </div>
 
-          <div className="w-full bg-bg5 px-6 sm:px-12 lg:px-18 py-6 text-center text-sm text-text7">
-            <div className="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center">
+          {/* Copyright Section — Matches Category Width */}
+          <div className="w-full bg-bg5 py-6 text-sm text-text7">
+            <div className="w-full max-w-screen-2xl mx-auto px-18 flex flex-col md:flex-row justify-between items-center">
               <p>Copyright © 2025 Energy Light Bulbs Ltd.</p>
               <img
                 src="https://doo9vxlv0gkqf.cloudfront.net/media/checkout_payment.png"

@@ -24,7 +24,7 @@ export default function OrderReturnForm() {
   };
 
   return (
-    <section className="px-4  w-full flex text-text18 bg-white">
+    <section className="px-4  min-h-screen w-full flex text-text18 bg-white">
       <div className="w-full  mx-auto space-y-8">
         {/* Breadcrumbs */}
         <Breadcrumbs />

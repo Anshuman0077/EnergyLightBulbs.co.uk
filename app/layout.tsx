@@ -36,7 +36,11 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${roboto.variable} ${oswald.variable} antialiased bg-bg1 text-text1`}
       >
-        {children}
+        <div>
+           {children}
+
+        </div>
+       
       </body>
     </html>
   );

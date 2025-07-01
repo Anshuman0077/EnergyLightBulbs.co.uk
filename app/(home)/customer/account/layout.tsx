@@ -10,7 +10,7 @@ export default function AccountLayout({
 }) {
   return (
     <div className="min-h-screen flex    px-4">
-      <div className=" w-full bg-bg1 pt-1 ">
+      <div className="min-h-screen w-full bg-bg1 pt-1 ">
 
         {children}
       
