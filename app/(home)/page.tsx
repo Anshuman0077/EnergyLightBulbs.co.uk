@@ -20,9 +20,8 @@ export default function Home() {
     <div className="w-full">
       <div className="flex   flex-col justify-center items-center ">
 
-        <div className="mt-2 w-full px-18   ">
+        {/* <div className="mt-2 w-full px-18   ">
           <Carousel/>
-          {/* <h1 className="font-bold text-2xl text-green-400">energyLightBulbs.co.uk</h1> */}
         </div>
         <div className="mt-3 w-full items-start justify-between text-black">
           <FilterData/>
@@ -30,7 +29,7 @@ export default function Home() {
         </div>
         <div className="text-black">
           <Offers />
-        </div>
+        </div> */}
       </div>
     </div>
   );
