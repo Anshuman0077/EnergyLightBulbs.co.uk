@@ -5,7 +5,7 @@ import { Card } from "./card";
 import { CardContent } from "./cardData";
 import { GrNext, GrPrevious } from "react-icons/gr";
 
-// Filter card content based on selected tab
+
 const filterData = (type: string) => {
   switch (type) {
     case "new":
@@ -26,9 +26,9 @@ export const FilterData = () => {
   const visibleItems = 5;
   const filteredData = filterData(activeTab);
   const totalItems = filteredData.length;
-  const maxIndex = totalItems - visibleItems; // now scrolls one by one
+  const maxIndex = totalItems - visibleItems; 
 
-  // Auto-scroll one card at a time
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
@@ -73,28 +73,28 @@ export const FilterData = () => {
         ))}
       </div>
 
-      {/* Prev/Next */}
-      <div className="absolute left-4 top-1/2 -translate-y-1/2 z-10">
+      
+      <div className="absolute left-4 top-1/2 -translate-y-1/2 z-10 ">
         <button
           onClick={handlePrev}
-          className="hover:scale-110 transition-transform"
+          className="hover:scale-110 transition-transform "
         >
           <GrPrevious size={24} />
         </button>
       </div>
-      <div className="absolute right-4 top-1/2 -translate-y-1/2 z-10">
+      <div className="absolute right-4 top-1/2 -translate-y-1/2 z-10  ">
         <button
           onClick={handleNext}
-          className="hover:scale-110 transition-transform"
+          className="hover:scale-110 transition-transform "
         >
-          <GrNext size={24} />
+          <GrNext size={24}  />
         </button>
       </div>
 
-      {/* Card Slider */}
-      <div className="overflow-hidden w-full">
+      
+      <div className="overflow-hidden w-full ">
         <div
-          className="flex transition-transform duration-700 ease-in-out"
+          className="flex transition-transform duration-700 ease-in-out "
           style={{
             width: `${(filteredData.length / visibleItems) * 100}%`,
             transform: `translateX(-${(100 / filteredData.length) * currentIndex}%)`,
@@ -103,7 +103,7 @@ export const FilterData = () => {
           {filteredData.map((item, index) => (
             <div
               key={index}
-              className="px-2"
+              className="px-2 flex items-center jusitfy-center w-full h-full "
               style={{ width: `${100 / filteredData.length}%` }}
             >
               <Card

@@ -3,11 +3,6 @@
 import { useState } from "react";
 import { useParams } from "next/navigation";
 import { categories } from "@/app/components/data/categories";
-import { BsGrid1X2Fill } from "react-icons/bs";
-import { IoMdDownload } from "react-icons/io";
-import { IoGrid } from "react-icons/io5";
-import { IoMdStar, IoMdCart, IoMdEye } from "react-icons/io";
-import { FaBasketShopping } from "react-icons/fa6";
 import { ShortedListed } from "@/app/components/shortedListed";
 import Link from "next/link";
 import { Breadcrumbs } from "@/app/components/breadcrum/breadcrumbs";

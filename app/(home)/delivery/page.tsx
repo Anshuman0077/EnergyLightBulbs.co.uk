@@ -3,7 +3,7 @@ import { Breadcrumbs } from "../../components/breadcrum/breadcrumbs";
 
 export default function DeliveryPage() {
   return (
-<div className="flex flex-col w-full px-10 mt-6 text-text18 text-sm">
+<div className="flex flex-col w-full px-10 mt-6 text-text18 text-sm min-h-screen">
   {/* Breadcrumb */}
   <div className="mb-5">
     <Breadcrumbs />

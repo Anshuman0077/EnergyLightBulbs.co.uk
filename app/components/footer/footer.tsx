@@ -100,7 +100,7 @@ export const Footer = () => {
                 <div className="flex w-full">
                   {/* Input with icon */}
                   <div className="relative w-full">
-                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-text14">
+                    <span className="absolute left-1 top-1/2 -translate-y-1/2 text-text14">
                       <MdOutlineForwardToInbox size={20} />
                     </span>
 
@@ -108,13 +108,13 @@ export const Footer = () => {
                       type="email"
                       name="search"
                       placeholder="Enter your email address"
-                      className="w-full bg-transparent text-text4 py-2 pl-10 pr-3 border-r-0  border border-border4 rounded-l-md placeholder:text-text14 placeholder:font-semibold placeholder:text-xs focus:outline-none"
+                      className="w-full bg-transparent text-text4 py-2 pl-7  border-r-0  border border-border4 rounded-l-md placeholder:text-text14 placeholder:font-semibold placeholder:text-xs focus:outline-none"
                       label=""
                     />
                   </div>
 
                   {/* Subscribe Button */}
-                  <button className=" px-1.5 py-2 bg-bg8 text-white text-xs font-bold rounded-r-md hover:bg-bg6 transition-all duration-300">
+                  <button className=" px-2 py-2 bg-bg8 text-white text-xs font-bold rounded-r-md hover:bg-bg6 transition-all duration-300">
                     SUBSCRIBE
                   </button>
                 </div>

@@ -2,8 +2,9 @@ import React from "react";
 
 export const BottomFoot = () => {
   return (
-    <div className="w-full bg-bg1 py-4 px-18">
-      <div className="flex flex-wrap justify-between items-center w-full gap-y-3">
+    <div className="w-full py-4  ">
+      <div className="flex flex-wrap   justify-between  
+       items-center w-full gap-y-3">
         {/* Left Links */}
         <div className="flex flex-wrap justify-center gap-x-3 text-sm text-text7">
           <a href="/about-us" className="hover:text-text6">

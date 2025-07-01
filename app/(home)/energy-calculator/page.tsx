@@ -53,7 +53,7 @@ export default function EnergyCalculatorPage() {
   });
 
   return (
-    <main className="w-full mx-auto py-10 px-6 text-black font-sans">
+    <main className="w-full mx-auto py-10 px-6 text-black font-sans min-h-screen">
       {/* Breadcrumb */}
       <Breadcrumbs />
 

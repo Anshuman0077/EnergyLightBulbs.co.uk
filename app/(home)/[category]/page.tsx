@@ -1,5 +1,5 @@
-import { Breadcrumbs } from "../components/breadcrum/breadcrumbs";
-import { categories } from "../components/data/categories";
+import { categories } from "@/app/components/data/categories";
+import { Breadcrumbs } from "@/app/components/breadcrum/breadcrumbs";
 import Link from "next/link";
 
 export default function CategoryPage({

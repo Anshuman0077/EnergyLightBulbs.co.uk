@@ -1,5 +1,6 @@
+import { Breadcrumbs } from "@/app/components/breadcrum/breadcrumbs";
 import React from "react";
-import { Breadcrumbs } from "../components/breadcrum/breadcrumbs";
+
 
 export default function SecurityPage() {
   return (

@@ -22,10 +22,13 @@ export default function ShippingPage() {
     <main className="min-h-screen bg-white text-black w-full px-6 sm:px-12 lg:px-20 py-6">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
-        <img
-          src="https://doo9vxlv0gkqf.cloudfront.net/media/logo/default/LOGO_ELB_update_100122.jpg"
-          alt="EnergyLightBulbs.co.uk Logo"
-        />
+        <a href="/">
+          <img
+            src="https://doo9vxlv0gkqf.cloudfront.net/media/logo/default/LOGO_ELB_update_100122.jpg"
+            alt="EnergyLightBulbs.co.uk Logo"
+          />
+        </a>
+
         <a
           href="/customer/account/create"
           className="text-sm text-blue-600 hover:underline"
@@ -35,17 +38,26 @@ export default function ShippingPage() {
       </div>
 
       {/* Progress Steps */}
-      <div className="relative flex items-center w-full mb-10 ">
-        <div className="absolute top-4 w-1/4 h-2 bg-bg8 rounded-full" />
-        <div className="flex justify-around w-1/4 relative z-10">
-          <div className="flex flex-col items-center">
-            <div className="w-10 h-10 rounded-full bg-bg1 text-text18 flex items-center justify-center text-md font-bold border-8 border-border8">
+      <div className="relative flex items-center w-full mb-10">
+        {/* Full Progress Bar Container */}
+        <div className="absolute top-4 left-0 h-2.5 w-1/4 bg-bg5 rounded-full overflow-hidden">
+          {/* Completed part (50%) */}
+          <div className="h-full bg-bg10 w-1/2"></div>
+        </div>
+
+        {/* Steps */}
+        <div className="flex justify-around w-1/4  relative z-10">
+          {/* Step 1: Shipping */}
+          <div className="flex flex-col items-center ">
+            <div className="w-12 h-12 rounded-full bg-bg1 text-text18 flex items-center justify-center text-md font-bold border-8 border-border13">
               ✓
             </div>
             <span className="text-lg font-bold text-text16">Shipping</span>
           </div>
-          <div className="flex flex-col items-center">
-            <div className="w-10 h-10 rounded-full bg-white text-text16 flex items-center justify-center text-md font-bold border-8 border-border19">
+
+          {/* Step 2: Review */}
+          <div className="flex flex-col items-center ">
+            <div className="w-12 h-12 rounded-full  text-text16 bg-bg1 flex items-center justify-center text-md font-bold border-8 border-border1">
               2
             </div>
             <span className="text-lg font-medium text-text16">
@@ -54,7 +66,6 @@ export default function ShippingPage() {
           </div>
         </div>
       </div>
-
       {/* Section Title */}
       <div className="flex flex-col items-start w-full mb-6">
         <h1 className="text-2xl font-semibold mb-2">Shipping Address</h1>
@@ -173,7 +184,7 @@ export default function ShippingPage() {
 
             <div className="text-xs flex flex-col space-y-4">
               {/* Option 1 */}
-              <label className="flex items-start space-x-2 cursor-pointer hover:bg-gray-50 p-2 rounded-md transition">
+              <label className="flex items-start space-x-2 cursor-pointer  p-2 rounded-md transition">
                 <input
                   type="radio"
                   name="shipping"
@@ -190,7 +201,7 @@ export default function ShippingPage() {
               <div className="border-t border-border4" />
 
               {/* Option 2 */}
-              <label className="flex items-start space-x-2 cursor-pointer hover:bg-gray-50 p-2 rounded-md transition">
+              <label className="flex items-start space-x-2 cursor-pointer  p-2 rounded-md transition">
                 <input
                   type="radio"
                   name="shipping"
@@ -209,7 +220,7 @@ export default function ShippingPage() {
               <div className="border-t border-border4" />
 
               {/* Option 3 */}
-              <label className="flex items-start space-x-2 cursor-pointer hover:bg-gray-50 p-2 rounded-md transition">
+              <label className="flex items-start space-x-2 cursor-pointer p-2 rounded-md transition">
                 <input
                   type="radio"
                   name="shipping"
