@@ -65,7 +65,7 @@ export const Footer = () => {
             <li>Fans And Heaters</li>
           </ul>
 
-          <div className="space-y-4 md:w-1/2  w-full text-xs font-semibold text-text14">
+          <div className="space-y-4  w-full  md:w-[14em]  text-xs font-semibold text-text14">
             <div className="bg-bg8 p-4 rounded ">
               <p className="text-base text-text1 font-bold">ENERGY CALCULATOR</p>
               <a href="/energy-calculator" className="mt-2 inline-flex items-center bg-bg1 px-4 py-2  rounded-md">

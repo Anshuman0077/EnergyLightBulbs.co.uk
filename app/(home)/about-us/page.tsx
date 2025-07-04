@@ -3,15 +3,15 @@ import { Breadcrumbs } from "../../components/breadcrum/breadcrumbs";
 
 export default function AboutUsPage() {
   return (
-<div className="text-2xl mt-5 font-semibold px-10">
+<div className="text-2xl mt-5 font-semibold sm:px-6 md:px-10 lg:px-18 ">
   <Breadcrumbs />
 
   <div className="w-full py-4 bg-bg1 text-text18">
     <h3 className="my-4 text-text18 text-3xl font-medium">About Us Page</h3>
 
     <div className="mt-8 w-full py-4">
-      {/* ✅ Image Section */}
-      <div className="flex items-center justify-between flex-wrap gap-6 h-auto md:h-[200px]">
+      {/*  Image Section */}
+      <div className="flex items-center  justify-start  md:justify-between md:flex-nowrap flex-wrap gap-6 md:h-[200px] h-auto">
         <img
           src="https://doo9vxlv0gkqf.cloudfront.net/media/wysiwyg/free_delivery.jpg"
           alt="Free Delivery"
@@ -22,7 +22,7 @@ export default function AboutUsPage() {
           <img
             src="https://doo9vxlv0gkqf.cloudfront.net/media/wysiwyg/fast_track.jpg"
             alt="Fast Track"
-            className="h-full w-auto object-contain"
+            className="h-[150px] md:h-full w-auto object-contain"
           />
           <span className="mt-2 text-sm font-medium text-gray-700">
             AWARD WINNING COMPANY
@@ -30,7 +30,7 @@ export default function AboutUsPage() {
         </div>
       </div>
 
-      {/* ✅ About Text Section */}
+      {/*  About Text Section */}
       <div className="flex flex-col mb-8 text-sm font-medium text-text18">
         <div className="mt-10 max-w-5xl space-y-6">
           <p className="leading-7 tracking-tight">
@@ -60,7 +60,7 @@ export default function AboutUsPage() {
         </div>
       </div>
 
-      {/* ✅ Grid Section with Bullet Lists */}
+      {/*  Grid Section with Bullet Lists */}
       <div className="text-sm mt-40">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full mx-auto text-sm">
           {/* Left Column */}
@@ -89,7 +89,7 @@ export default function AboutUsPage() {
           </div>
         </div>
 
-        {/* ✅ Final Paragraph */}
+        {/*  Final Paragraph */}
         <p className="text-center mt-6">
           At Energy Light Bulbs we take great pride in everything that we do; taking care of our customers by offering them the very best service at the lowest prices on the internet is one way that we can ensure our customers keep coming back and using us time and time again. We hope you find our new website easy to use, and look forward to providing you with a low-cost, fast, and efficient service!
         </p>

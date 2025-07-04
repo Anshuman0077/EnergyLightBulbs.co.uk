@@ -51,7 +51,7 @@ export const Category = () => {
       grid-flow-row 
       auto-cols-max 
       grid-cols-[repeat(auto-fit,minmax(80px,1fr))] 
-      gap-x-4 gap-y-2 
+       gap-y-2 gap-x-4
       px-4 sm:px-3 md:px-18 
       relative z-10
     "
@@ -61,7 +61,7 @@ export const Category = () => {
         key={`${category.slug}-${index}`}
         className={`min-h-[60px] flex items-center  text-xs 
           transition-all duration-300 hover:text-text20 
-          ${category.isLastTwo ? "bg-bg9 hover:bg-transparent hover:text-text20 text-center" : ""}
+          ${category.isLastTwo ? " bg-bg9 hover:bg-transparent hover:text-text20 text-center " : ""}
         `}
         onMouseEnter={() => handleMouseEnter(index)}
         onMouseLeave={handleMouseLeave}
@@ -71,7 +71,7 @@ export const Category = () => {
       >
         <Link href={`/${category.slug}`}>
           <span
-            className={`flex items-center text-center text-xs justify-center font-medium cursor-pointer 
+            className={`flex items-center text-center text-xs gap-x-2 justify-center font-medium cursor-pointer 
               transition-all duration-300 ease-in 
               ${category.isLastTwo ? "hover:text-text20" : ""}
             `}
