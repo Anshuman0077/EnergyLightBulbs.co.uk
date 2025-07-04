@@ -20,14 +20,14 @@ export default function Home() {
     <div className="w-full">
       <div className="flex   flex-col justify-center items-center ">
 
-        {/* <div className="mt-2 w-full px-18   ">
+        <div className="w-full">
           <Carousel/>
         </div>
         <div className="mt-3 w-full items-start justify-between text-black">
           <FilterData/>
           
         </div>
-        <div className="text-black">
+        {/* <div className="text-black">
           <Offers />
         </div> */}
       </div>

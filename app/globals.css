@@ -239,6 +239,36 @@ body {
   }
 }
 
+
+.card-wrapper {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .card-wrapper {
+    width: 50%;
+  }
+}
+@media (min-width: 320px) {
+  .card-wrapper {
+    width: 50%;
+  }
+}
+
+@media (min-width: 768px) {
+  .card-wrapper {
+    width: 33.3333%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-wrapper {
+    width: 20%;
+  }
+}
+
+
+
 @layer utilities {
   .hover\:text-text6:hover {
     color: #ff740d;

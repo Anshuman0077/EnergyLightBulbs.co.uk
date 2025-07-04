@@ -38,7 +38,7 @@ export default function WithUILayout({
 
       {!isShippingPage && (
         <footer className="w-full bg-bg5 border-t-3 border-border6 mt-4">
-           {/* <div className="max-w-screen-2xl mx-auto w-full px-18">
+          {/* <div className="max-w-screen-2xl mx-auto w-full px-18">
             <Footer />
           </div>
 
@@ -46,7 +46,7 @@ export default function WithUILayout({
             <div className="w-full max-w-screen-2xl mx-auto px-18">
               <BottomFoot />
             </div>
-          </div>  */}
+          </div>   */}
 
           {/* Copyright Section — Matches Category Width */}
           {/* <div className="w-full bg-bg5 py-6 text-sm text-text7">

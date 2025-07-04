@@ -5,7 +5,6 @@ import { Card } from "./card";
 import { CardContent } from "./cardData";
 import { GrNext, GrPrevious } from "react-icons/gr";
 
-
 const filterData = (type: string) => {
   switch (type) {
     case "new":
@@ -23,26 +22,23 @@ export const FilterData = () => {
   const [activeTab, setActiveTab] = useState("new");
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const visibleItems = 5;
   const filteredData = filterData(activeTab);
   const totalItems = filteredData.length;
-  const maxIndex = totalItems - visibleItems; 
-
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
-    }, 3000);
+      setCurrentIndex((prev) => (prev >= totalItems - 1 ? 0 : prev + 1));
+    }, 2000);
 
     return () => clearInterval(interval);
-  }, [activeTab, maxIndex]);
+  }, [activeTab, totalItems]);
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+    setCurrentIndex((prev) => (prev >= totalItems - 1 ? 0 : prev + 1));
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
+    setCurrentIndex((prev) => (prev <= 0 ? totalItems - 1 : prev - 1));
   };
 
   const handleTabChange = (tab: string) => {
@@ -51,17 +47,17 @@ export const FilterData = () => {
   };
 
   return (
-    <div className="w-full relative bg-bg1 px-18 py-8 overflow-hidden">
+    <div className="w-full relative bg-bg1 px-4 sm:px-6 md:px-18 py-8 overflow-hidden">
       {/* Tabs */}
-      <div className="flex gap-3 border-b-4 mb-4">
+      <div className="flex gap-3 overflow-x-auto scrollbar-hide md:overflow-visible mb-4 border-b-0 md:border-b-4">
         {["new", "best", "special"].map((type) => (
           <button
             key={type}
             onClick={() => handleTabChange(type)}
-            className={`py-2 px-4 rounded font-bold ${
+            className={`py-2 px-4 whitespace-nowrap text-xs md:text-sm rounded font-bold shrink-0 transition-colors duration-200 ${
               activeTab === type
                 ? "bg-bg15 text-text1"
-                : "bg-bg4 text-text14 hover:bg-bg15"
+                : "bg-bg4 text-text14 hover:bg-bg15 hover:text-text1"
             }`}
           >
             {type === "new"
@@ -73,39 +69,34 @@ export const FilterData = () => {
         ))}
       </div>
 
-      
-      <div className="absolute left-4 top-1/2 -translate-y-1/2 z-10 ">
+      {/* Navigation Buttons */}
+      <div className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-10">
         <button
           onClick={handlePrev}
-          className="hover:scale-110 transition-transform "
+          className="hover:scale-110 transition-transform p-2 bg-bg1"
         >
-          <GrPrevious size={24} />
+          <GrPrevious size={20} />
         </button>
       </div>
-      <div className="absolute right-4 top-1/2 -translate-y-1/2 z-10  ">
+      <div className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-10">
         <button
           onClick={handleNext}
-          className="hover:scale-110 transition-transform "
+          className="hover:scale-110 transition-transform p-2 bg-bg1"
         >
-          <GrNext size={24}  />
+          <GrNext size={20} />
         </button>
       </div>
 
-      
-      <div className="overflow-hidden w-full ">
+      {/* Card Slider */}
+      <div className="overflow-hidden w-full">
         <div
-          className="flex transition-transform duration-700 ease-in-out "
+          className="flex transition-transform duration-700 ease-in-out"
           style={{
-            width: `${(filteredData.length / visibleItems) * 100}%`,
             transform: `translateX(-${(100 / filteredData.length) * currentIndex}%)`,
           }}
         >
           {filteredData.map((item, index) => (
-            <div
-              key={index}
-              className="px-2 flex items-center jusitfy-center w-full h-full "
-              style={{ width: `${100 / filteredData.length}%` }}
-            >
+            <div key={index} className="px-2 shrink-0 card-wrapper">
               <Card
                 img={item.img}
                 description={item.description}
