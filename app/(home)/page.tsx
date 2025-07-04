@@ -23,13 +23,13 @@ export default function Home() {
         <div className="w-full">
           <Carousel/>
         </div>
-        <div className="mt-3 w-full items-start justify-between text-black">
+        <div className=" w-full items-start justify-between text-black">
           <FilterData/>
           
         </div>
-        {/* <div className="text-black">
+        <div className="text-black">
           <Offers />
-        </div> */}
+        </div>
       </div>
     </div>
   );
