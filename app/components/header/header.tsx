@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { FaPhoneAlt, FaUser } from "react-icons/fa";
 import { LuShoppingBasket } from "react-icons/lu";
 import { MdArrowDropDown, MdDelete, MdEdit } from "react-icons/md";
-import { IoSearch } from "react-icons/io5";
+import { IoCallSharp, IoSearch } from "react-icons/io5";
 import { RxCross2, RxHamburgerMenu } from "react-icons/rx";
 import { Input } from "../Input/Input";
 
@@ -35,24 +35,26 @@ export default function Header() {
 
   return (
     <header className="w-full h-full flex bg-bg1">
-      <div className=" w-full px-4 sm:px-3 md:px-6 lg:px-8 xl:px-10 2xl:px-18">
+      <div className=" w-full sm:px-3 md:px-6 lg:px-8 xl:px-10 2xl:px-18">
         <div className="flex flex-col md:flex-row md:flex-nowrap items-start md:items-center w-full md:gap-4 gap-x-4">
           {/* Logo */}
           <div className="w-full md:w-[32%] flex-shrink-0 flex justify-center max-md:justify-start md:justify-start min-w-[200px]">
-            <div className="md:hidden  w-full justify-between items-center  flex">
-              <div className=" flex items-center justify-between mt-3 w-full ">
-                <div className="md:hidden text-text18">
-                  <RxHamburgerMenu />
+            <div className="md:hidden  w-full justify-between\ items-center  flex">
+              <div className=" flex items-center px-4 justify-between gap-x-3 mt-2 w-full ">
+                <div className="md:hidden text-text16">
+                  <RxHamburgerMenu  size={24}/>
                 </div>
+                <div className="flex-1 flex w-full" />
                 <div className="relative">
                   <div
-                    className="border-2 border-border5 flex items-center px-3 py-2 rounded hover:border-red-400 cursor-pointer"
+                    className="border-1  border-border6 flex items-center px-3 py-2 rounded hover:border-red-400 cursor-pointer"
                     onClick={() => setShowAccount((prev) => !prev)}
                   >
                     <span className="font-semibold text-text14 text-xl">
                       <FaUser />
                     </span>
                   </div>
+                  
 
                   {showAccount && (
                     <div className="absolute top-full  mt-2  w-[23vw] left-1/2 -translate-x-34 bg-white text-start shadow-md rounded-md border border-border5 z-50">
@@ -83,6 +85,10 @@ export default function Header() {
                       </a>
                     </div>
                   )}
+                </div>
+                
+                <div className=" md:hidden  bg-bg3  py-2 px-3 text-text16 rounded">
+                  <IoCallSharp size={20} />
                 </div>
               </div>
             </div>
@@ -296,10 +302,10 @@ export default function Header() {
               </div>
             </div>
 
-            <div className="w-full flex justify-start md:justify-end py-0 bg-gray-600 md:bg-white transition-colors duration-300">
-              <div className="relative w-full max-w-xl md:mt-4 mt-0 ">
+            <div className="w-full px-4 space-x-3 flex justify-start md:justify-end py-0 bg-gray-600 md:bg-white transition-colors duration-300 ">
+              <div className="relative w-full max-w-xl  md:mt-4 mt-0 ">
                 {/* Input field */}
-                <div className="sm:px-6 md:px-0  max-sm:px-6 md:py-0 sm:py-2 max-sm:py-2 mr-4 ">
+                <div className="sm:px-6 md:px-0   md:py-0 sm:py-2 max-sm:py-2 mr-4 ">
                   <Input
                     type="text"
                     name="search"
@@ -315,14 +321,14 @@ export default function Header() {
                 </div>
               </div>
               <div
-                className="relative flex mx-3 md:hidden sm:py-2 max-sm:py-2 sm:px-3 max-sm:px-3    md:py-0 "
+                className="relative flex  md:hidden sm:py-2 max-sm:py-2    md:py-0 "
                 ref={basketRef}
               >
                 <div
                   className="flex items-center space-x-2 px-3   rounded-md bg-bg7 text-white font-bold cursor-pointer"
                   onClick={() => setShowBasket((prev) => !prev)}
                 >
-                  <span className="text-md">BASKET</span>
+                  <span className="text-md max-sm:text-xs sm:text-sm ">BASKET</span>
                   <LuShoppingBasket />
                   <MdArrowDropDown className="text-text19 text-lg" />
                 </div>

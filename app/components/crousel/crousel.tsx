@@ -71,53 +71,68 @@ const Carousel = () => {
   }, []);
 
   return (
-    <div className="relative w-full overflow-hidden ">
-      {/* Slide Track */}
-      <div
-        className="flex transition-transform duration-500 ease-in-out"
-        ref={trackRef}>
-        {images.map((src, index) => (
-          <img
-            key={index}
-            src={src}
-            className="w-full flex-shrink-0"
-            alt={`Slide ${index}`}
-          />
-        ))}
-      </div>
-
-      {/* Prev Button */}
-      <button
-        className="absolute top-1/2 left-4 bg-gray-100 cursor-pointer opacity-50 hover:opacity-100 py-2 px-2 rounded text-text18 hover:bg-gray-800 hover:text-white border-gray-600 transform -translate-y-1/2 z-10"
-        onClick={() => {
-          handlePrev();
-          resetInterval();
-        }}>
-        <GrPrevious size={26} />
-      </button>
-
-      {/* Next Button */}
-      <button
-        className="absolute top-1/2 right-4 cursor-pointer transform -translate-y-1/2 z-10 bg-gray-100 py-2 rounded opacity-80 hover:opacity-100 px-2 text-text18 hover:bg-gray-800 hover:text-white border-gray-600"
-        onClick={() => {
-          handleNext();
-          resetInterval();
-        }}>
-        <GrNext size={26} />
-      </button>
-
-      {/* Dots */}
-      <div className="flex justify-center mt-6 gap-2">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => handleDotClick(index)}
-            className={`h-3 w-3 rounded-xs ${
-              index === activeIndex ? "bg-bg8 opacity-50" : "bg-bg14"
-            }`}/>
-        ))}
-      </div>
+<div className="w-full px-4 sm:px-3 max-sm:px-0 md:px-18 mt-0 md:mt-4">
+  <div className="relative w-full overflow-hidden">
+    {/* Slide Track */}
+    <div
+      ref={trackRef}
+      className="flex transition-transform duration-500 ease-in-out"
+    >
+      {images.map((src, index) => (
+        <img
+          key={index}
+          src={src}
+          alt={`Slide ${index}`}
+          className="w-full flex-shrink-0 object-cover max-h-[400px] sm:max-h-[500px]"
+        />
+      ))}
     </div>
+
+    {/* Prev Button */}
+    <button
+      onClick={() => {
+        handlePrev();
+        resetInterval();
+      }}
+      className="absolute top-1/2 left-2 sm:left-4 transform -translate-y-1/2 z-10 
+        bg-gray-100 text-text18 border border-gray-300 
+        hover:bg-gray-800 hover:text-white 
+        opacity-70 rounded hover:opacity-100 
+         p-2"
+    >
+      <GrPrevious size={22} />
+    </button>
+
+    {/* Next Button */}
+    <button
+      onClick={() => {
+        handleNext();
+        resetInterval();
+      }}
+      className="absolute top-1/2 right-2 sm:right-4 transform -translate-y-1/2 z-10 
+        bg-gray-100 text-text18 border border-gray-300 
+        hover:bg-gray-800 hover:text-white 
+        opacity-70 rounded hover:opacity-100 
+         p-2"
+    >
+      <GrNext size={22} />
+    </button>
+
+    {/* Dots */}
+    <div className="flex justify-center mt-4 sm:mt-6 gap-2">
+      {images.map((_, index) => (
+        <button
+          key={index}
+          onClick={() => handleDotClick(index)}
+          className={`h-3 w-3 rounded-xs transition-colors duration-300 ${
+            index === activeIndex ? "bg-bg8 opacity-80" : "bg-bg14"
+          }`}
+        />
+      ))}
+    </div>
+  </div>
+</div>
+
   );
 };
 

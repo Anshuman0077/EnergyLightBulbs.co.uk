@@ -1,5 +1,4 @@
 import React from "react";
-import { categories } from "../data/categories";
 
 export interface CardProps {
   img: string;
@@ -15,26 +14,34 @@ export const Card: React.FC<CardProps> = ({
   oldPrice,
 }) => {
   return (
-    <div className="w-[250x] bg-bg1 overflow-hidden shadow-none  items-center flex flex-col justify-center  transition-shadow hover:side-Only ">
-      {/* Image */}
-      <div className="h-[250px] mx-14">
-        <img src={img} alt="Product" className="object-contain w-full   h-full" />
+    <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-full bg-bg1 hover:shadow-md transition-all duration-300 flex flex-col mx-auto">
+      {/* Image Section */}
+      <div className="w-full h-[220px] sm:h-[230px] md:h-[240px] lg:h-[250px] p-4 flex items-center justify-center">
+        <img
+          src={img}
+          alt="Product"
+          className="object-contain h-full w-full"
+        />
       </div>
 
-      {/* Description */}
-      <div className="px-3 py-3  pt-10">
-        <p className="text-sm font-medium text-text7">{description}</p>
+      {/* Description & Pricing */}
+      <div className="flex flex-col justify-between px-4 pb-4 flex-grow">
+        {/* Description */}
+        <p className="text-sm font-medium text-text7 mb-3 line-clamp-2">
+          {description}
+        </p>
 
-        {/* Price */}
-        <div className="mt-10 flex justify-between text-xs ">
-          <div className="flex gap-1">
+        {/* Price Section */}
+        <div className="flex justify-between text-xs flex-wrap">
+          {/* New Price */}
+          <div className="flex ">
             <span className="text-text6 font-semibold">{price}</span>
             <span className="text-text18">(Incl. VAT)</span>
           </div>
-          <div className="flex gap-1">
-            <span className="line-through text-text6 font-semibold">
-              {oldPrice}
-            </span>
+
+          {/* Old Price */}
+          <div className="flex gap-1  items-start flex-wrap text-xs">
+            <span className="line-through text-text6 font-semibold">{oldPrice}</span>
             <span className="text-text18">(Incl. VAT)</span>
           </div>
         </div>

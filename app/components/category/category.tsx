@@ -61,7 +61,7 @@ export const Category = () => {
         key={`${category.slug}-${index}`}
         className={`min-h-[60px] flex items-center  text-xs 
           transition-all duration-300 hover:text-text20 
-          ${category.isLastTwo ? "bg-bg9 hover:bg-transparent hover:text-text20" : ""}
+          ${category.isLastTwo ? "bg-bg9 hover:bg-transparent hover:text-text20 text-center" : ""}
         `}
         onMouseEnter={() => handleMouseEnter(index)}
         onMouseLeave={handleMouseLeave}
@@ -71,7 +71,7 @@ export const Category = () => {
       >
         <Link href={`/${category.slug}`}>
           <span
-            className={`flex items-center gap-x-1 text-xs justify-center font-medium cursor-pointer 
+            className={`flex items-center text-center text-xs justify-center font-medium cursor-pointer 
               transition-all duration-300 ease-in 
               ${category.isLastTwo ? "hover:text-text20" : ""}
             `}
