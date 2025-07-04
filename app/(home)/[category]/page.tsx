@@ -1,66 +1,68 @@
+"use client";
+
+import { useParams } from "next/navigation";
 import { categories } from "@/app/components/data/categories";
 import { Breadcrumbs } from "@/app/components/breadcrum/breadcrumbs";
 import Link from "next/link";
+import { ToggleBtn } from "@/app/components/toggleBtn";
 
-export default function CategoryPage({
-  params,
-}: {
-  params: { category: string };
-}) {
-  const category = categories.find((cat) => cat.slug === params.category);
+export default function CategoryPage() {
+  const params = useParams();
+  const categorySlug = params?.category as string;
+
+  const category = categories.find((cat) => cat.slug === categorySlug);
 
   if (!category) {
-    return <h1>Category Not Found</h1>;
+    return <h1 className="text-center text-red-500 text-xl">Category Not Found</h1>;
   }
 
   return (
-    <div className="min-h-screen w-full bg-bg1 pb-40 py-8 flex flex-col justify-center">
-      
-      {/* <Link href={`/${category.slug}`} className="text-text18 hover:text-text6 transition-colors duration-300 text-sm px-26 pb-10 pt-6  ">Home</Link> */}
-       {/* <Link href={`/${category.name}/${category.slug}`}>{category.name}</Link> */}
-      <div className="max-w-screen-xl mx-auto px-4">
-        <div className="mb-6">
-           <Breadcrumbs/>
-
+    <section className="min-h-screen w-full bg-bg1 pb-40 md:py-8 py-4 flex flex-col justify-start">
+      <div className="max-w-screen-xl mx-auto w-full px-4">
+        {/* Breadcrumb */}
+        <div className="md:mb-6 mb-4">
+          <Breadcrumbs />
         </div>
-       
-        
-        <h1 className="text-2xl font-bold text-black mb-6">{category.name}</h1>
-         
 
-        <div className="flex flex-col md:flex-row items-start gap-8">
-          <div className="w-full md:w-64 border-2 rounded-md  ">
-            <h2 className="text-lg font-extralight text-black border-b-2 border-border9  px-4 py-2">
-              CATEGORIES
-            </h2>
-            <ul className="p-4 text-xs   text-black space-y-2 cursor-pointer">
-              {category.subcategory.map((sub) => (
-                <li key={sub.slug}>
-                  <Link href={`/${category.slug}/${sub.slug}`}>
-                    {sub.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+        {/* Category Heading */}
+        <h1 className="text-2xl font-bold text-black md:mb-6 mb-4">{category.name}</h1>
 
-          <div className="flex-1">
-            <h2 className="text-2xl font-bold text-black mb-3 mt-2">
-              {category.name.toUpperCase()}
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 pt-2 ">
+        <div className="flex flex-col md:flex-row md:gap-8 gap-4">
+          {/* Sidebar */}
+          <aside className="w-full md:w-64 md:h-72 border-2 rounded-md">
+
+            <ToggleBtn title="CATEGORIES"  targetId="sidebarContent"/>
+
+            {/* Sidebar Content */}
+            <div id="sidebarContent" className="hidden md:block">
+              <ul className="p-4 space-y-2 text-xs text-black">
+                {category.subcategory.map((sub) => (
+                  <li key={sub.slug}>
+                    <Link href={`/${category.slug}/${sub.slug}`}>
+                      {sub.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </aside>
+
+          {/* Main Content */}
+          <main className="flex-1">
+            <h2 className="text-2xl font-bold text-black">{category.name.toUpperCase()}</h2>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-4 md:gap-y-6 mt-4 gap-y-4 md:pt-2">
               {category.subcategory.map((sub) => (
                 <div
                   key={sub.slug}
-                  className="border rounded-md pb-10 w-full flex flex-col  text-center items-sstart  hover:shadow-md cursor-pointer"
+                  className="border rounded-md pb-6 w-full flex flex-col items-center text-center hover:shadow-md cursor-pointer transition-shadow duration-300"
                 >
-                  
                   <img
                     src="https://doo9vxlv0gkqf.cloudfront.net/media/catalog/tmp/category/GU10_Halogen_Bulbs_4.jpg"
                     alt={sub.name}
-                    className=" h-full w-full object-contain"
+                    className="w-full h-40 object-contain rounded-t"
                   />
-                  <div className="text-sm font-semibold text-black mt-4 hover:text-text6 transition-all duration-300 ease-in-out">
+                  <div className="text-sm font-semibold text-black mt-4 hover:text-text6 transition-colors duration-300">
                     <Link href={`/${category.slug}/${sub.slug}`}>
                       {sub.name}
                     </Link>
@@ -68,11 +70,9 @@ export default function CategoryPage({
                 </div>
               ))}
             </div>
-          </div>
+          </main>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
-
-
