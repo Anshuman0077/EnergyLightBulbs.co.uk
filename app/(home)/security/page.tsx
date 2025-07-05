@@ -4,15 +4,15 @@ import React from "react";
 
 export default function SecurityPage() {
   return (
-<section className="w-full flex min-h-screen text-text18 px-8 py-10">
-  <div className="w-full  mx-auto">
+<section className="w-full flex min-h-screen text-text18 md:py-10">
+  <div className="w-full max-w-7xl px-6   mx-auto">
     {/* Breadcrumb */}
-    <div className="mb-4">
+    <div className="md:mb-4 mb-2">
       <Breadcrumbs />
     </div>
 
     {/* Heading */}
-    <h1 className="text-3xl font-bold mb-10">Security</h1>
+    <h1 className="md:text-3xl  text-2xl  font-semibold md:font-bold md:mb-10 mb-5">Security</h1>
 
     {/* Banner Image */}
     <img

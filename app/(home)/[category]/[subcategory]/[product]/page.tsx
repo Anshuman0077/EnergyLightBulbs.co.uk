@@ -31,29 +31,29 @@ export default function ProductPage() {
   const [view, setView] = useState("grid");
 
   return (
-    <div className="min-h-screen w-full bg-bg1">
+    <div className="min-h-screen w-full max-w-7xl px-6 mx-auto  bg-bg1">
       {/* Breadcrumb Section */}
-      <div className="px-4 sm:px-6 lg:px-10 mt-6">
+      <div className="md:mt-6 mt-3">
         <Breadcrumbs />
       </div>
 
       {/* Product Heading */}
-      <h3 className="text-xl sm:text-2xl font-semibold text-text18 px-4 sm:px-6 lg:px-10 mt-4">
+      <h3 className="text-xl sm:text-2xl font-semibold text-text18 mt-4">
         {product.imgName}
       </h3>
 
       {/* Product View & Description */}
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className=" w-full max-w-7xl md:px-18  px-4 mx-auto  md:py-8 py-4">
         {/* Grid/List Toggle */}
-        <div className="mb-6">
+        <div className="md:mb-6 mb-0">
           <ShortedListed view={view} setView={setView} />
         </div>
 
         {/* Product View */}
-        <div className="mb-10">{view === "grid" ? <GridView /> : <ListView />}</div>
+        <div className="md:mb-10 mb-5 ">{view === "grid" ? <GridView /> : <ListView />}</div>
 
         {/* Repeated Toggle Below */}
-        <div className="mb-8">
+        <div className="md:mb-8 mb-4">
           <ShortedListed view={view} setView={setView} />
         </div>
 

@@ -8,7 +8,7 @@ import { Input } from "../Input/Input";
 export const Footer = () => {
   return (
 <footer className="mt-4 w-full text-text8">
-  <div className="w-full px-4 sm:px-8 md:px-16  py-8">
+  <div className="w-full max-w-7xl px-6 mx-auto  py-8">
     <div className="mx-auto w-full   flex flex-col md:flex-row md:justify-between gap-10">
 
       {/* LEFT SIDE COLUMNS */}

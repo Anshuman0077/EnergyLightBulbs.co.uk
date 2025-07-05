@@ -2,7 +2,7 @@ import React from "react";
 
 export const BottomFoot = () => {
   return (
-<div className="w-full py-4 px-4 sm:px-8 md:px-18">
+<div className="py-4 w-full max-w-7xl px-6 mx-auto">
   <div className="flex flex-col md:flex-row flex-wrap justify-between items-start gap-y-4 text-sm text-text7">
 
     {/* Left Links */}

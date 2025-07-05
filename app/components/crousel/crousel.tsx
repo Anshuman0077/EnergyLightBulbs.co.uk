@@ -71,7 +71,7 @@ const Carousel = () => {
   }, []);
 
   return (
-<div className="w-full px-4 sm:px-3 max-sm:px-0 md:px-18 mt-0 md:mt-4">
+<div className="w-full  mt-0 md:mt-4">
   <div className="relative w-full overflow-hidden">
     {/* Slide Track */}
     <div

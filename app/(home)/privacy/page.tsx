@@ -4,14 +4,14 @@ import React from "react";
 
 export default function PrivancyPage() {
   return (
-<section className="w-full flex min-h-screen text-text18 px-8 py-10">
-  <div className="w-full mx-auto">
-    <div className="mb-6">
+<section className="w-full flex min-h-screen text-text18 px-8 md:py-10 ">
+  <div className="w-full max-w-7xl px-6 mx-auto">
+    <div className="md:mb-6 mb-3">
       <Breadcrumbs />
     </div>
 
     {/* Page Title */}
-    <h1 className="text-2xl font-bold tracking-tight mb-10">
+    <h1 className="md:text-2xl  text-xl font-semibold md:font-bold tracking-tight md:mb-10 mb-5">
       Privancy and Cookie Policy
     </h1>
 
@@ -19,7 +19,7 @@ export default function PrivancyPage() {
     <img
       src="https://doo9vxlv0gkqf.cloudfront.net/media/wysiwyg/free_delivery.jpg"
       alt=""
-      className="mb-8 rounded-md shadow-sm max-w-full h-auto object-contain"
+      className="mb-8  shadow-sm max-w-full h-auto object-contain"
     />
 
     {/* Policy Content */}

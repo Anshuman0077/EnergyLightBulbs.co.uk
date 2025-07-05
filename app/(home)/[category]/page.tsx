@@ -17,10 +17,10 @@ export default function CategoryPage() {
   }
 
   return (
-    <section className="min-h-screen w-full bg-bg1 pb-40 md:py-8 py-4 flex flex-col justify-start">
-      <div className="max-w-screen-xl mx-auto w-full px-4">
+    <section className="min-h-screen w-full bg-bg1 pb-40 md:py-8  flex flex-col justify-start">
+      <div className="max-w-screen-xl mx-auto w-full px-6">
         {/* Breadcrumb */}
-        <div className="md:mb-6 mb-4">
+        <div className="md:mb-6">
           <Breadcrumbs />
         </div>
 

@@ -35,7 +35,7 @@ export default function Header() {
 
   return (
     <header className="w-full h-full flex bg-bg1">
-      <div className=" w-full sm:px-3 md:px-6 lg:px-8 xl:px-10 2xl:px-18">
+      <div className=" w-full max-w-7xl px-6 mx-auto">
         <div className="flex flex-col md:flex-row md:flex-nowrap items-start md:items-center w-full md:gap-4 gap-x-4">
           {/* Logo */}
           <div className="w-full md:w-[32%] flex-shrink-0 flex justify-center max-md:justify-start md:justify-start min-w-[200px]">

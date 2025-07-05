@@ -17,7 +17,7 @@ export default function Home() {
   ]
 
   return (
-    <div className="w-full">
+    <div className=" w-full max-w-7xl px-6 mx-auto">
       <div className="flex   flex-col justify-center items-center ">
 
         <div className="w-full">

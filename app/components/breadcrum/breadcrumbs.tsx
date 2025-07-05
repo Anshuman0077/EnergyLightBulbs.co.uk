@@ -40,7 +40,7 @@ export const Breadcrumbs = () => {
   }
 
   return (
-    <nav className="text-sm flex items-center flex-wrap">
+    <nav className="text-sm md:flex hidden  items-center flex-wrap ">
       {breadcrumbs.map((crumb, index) => {
         const isLast = index === breadcrumbs.length - 1;
 

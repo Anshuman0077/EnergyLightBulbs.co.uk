@@ -10,7 +10,7 @@ interface Props {
 
 export const CategoryData: React.FC<Props> = ({ subcategories, mainCategoryName }) => {
   return (
-    <div className="w-full grid grid-cols-5 auto-rows-auto gap-x-3 px-4 py-2 text-black">
+    <div className="w-full  max-w-7xl px-6 mx-auto grid grid-cols-1 auto-rows-auto gap-x-3  py-2 text-black">
       {subcategories.map((sub, index) => {
         const isFirstMainCategory = mainCategoryName === "Light Bulbs";
 
@@ -36,7 +36,7 @@ export const CategoryData: React.FC<Props> = ({ subcategories, mainCategoryName 
                   <img
                     src={item.img}
                     alt={item.imgName}
-                    className="w-14 h-14 border p-1 border-border7 object-contain rounded transition-transform duration-500 ease-in-out hover:scale-105"
+                    className="w-14 h-14 border  border-border7 object-contain rounded transition-transform duration-500 ease-in-out hover:scale-105"
                   />
                   <Link href={`/${generateSlug(mainCategoryName)}/${generateSlug(sub.name)}/${generateSlug(item.imgName)}`}  className="text-xs transition-all duration-500 ease-in-out">
                     {item.imgName}

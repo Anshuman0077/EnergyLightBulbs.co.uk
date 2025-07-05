@@ -47,7 +47,7 @@ export const FilterData = () => {
   };
 
   return (
-    <div className="w-full relative bg-bg1 px-4 sm:px-6 md:px-18 py-8 overflow-hidden">
+    <div className="w-full relative bg-bg1  py-8 overflow-hidden">
       {/* Tabs */}
       <div className="flex gap-3 overflow-x-auto scrollbar-hide md:overflow-visible mb-4 border-b-0 md:border-b-4">
         {["new", "best", "special"].map((type) => (
@@ -70,10 +70,10 @@ export const FilterData = () => {
       </div>
 
       {/* Navigation Buttons */}
-      <div className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-10">
+      <div className="absolute left-2 md:left-0  sm:left-4 top-1/2 -translate-y-1/2 z-10">
         <button
           onClick={handlePrev}
-          className="hover:scale-110 transition-transform p-2 bg-bg1"
+          className="hover:scale-110 transition-transform"
         >
           <GrPrevious size={20} />
         </button>
@@ -81,7 +81,7 @@ export const FilterData = () => {
       <div className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-10">
         <button
           onClick={handleNext}
-          className="hover:scale-110 transition-transform p-2 bg-bg1"
+          className="hover:scale-110 transition-transform"
         >
           <GrNext size={20} />
         </button>

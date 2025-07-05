@@ -3,13 +3,13 @@ import { Breadcrumbs } from "../../components/breadcrum/breadcrumbs";
 
 export default function ReturnPolicyPage() {
   return (
-    <section className="w-full flex min-h-screen text-text18 py-10 px-6  tracking-tighter leading-4">
-      <div className=" w-full mx-auto">
-        <div className="mb-6">
+    <section className="w-full flex min-h-screen text-text18 md:py-10 px-6 md:px-18 sm:px-10  tracking-tighter leading-4">
+      <div className="w-full max-w-7xl px-6 mx-auto">
+        <div className="md:mb-6 mb-3 ">
           <Breadcrumbs />
         </div>
 
-        <h1 className="text-4xl font-bold mb-8 tracking-tight">
+        <h1 className="md:text-4xl  text-2xl font-semibold md:font-bold md:mb-8 mb-4 tracking-tight">
           Returns Policy
         </h1>
 
@@ -105,17 +105,17 @@ export default function ReturnPolicyPage() {
           </div>
 
           <p>Goods must not be used or installed,</p>
-          <div className="border w-1/3 ">
-            <div className="border-b p-5">
-              <p>
+          <div className="border-1 border-border11 md:w-1/3 w-full">
+            <div className="border-b-1 border-border11 p-4">
+              <p className="w-full  leading-4 md:tracking-relaxed tracking-tighter md:text-sm text-xs">
                 {" "}
                 <b>Your legal rights:</b> When you buy goods from a business, in
                 law you have a number of rights as a consumer. These include the
                 right to claim a refund, replacement.
               </p>
             </div>
-            <div className="p-5 flex items-center">
-              <p>
+            <div className="p-4 flex items-center">
+              <p className="w-full leading-4 tracking-tighter md:text-sm text-xs">
                 {" "}
                 <b>Our policy:</b> In addition to your legal rights, we also
                 allow you to return goods if you simply change your mind. Please
