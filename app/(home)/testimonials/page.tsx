@@ -3,14 +3,14 @@ import { Breadcrumbs } from "../../components/breadcrum/breadcrumbs";
 
 export default function TestimonalsPage() {
   return (
-<section className="w-full px-6 md:px-10 mt-10 mb-16 text-text18">
+<section className="w-full  max-w-7xl  mx-auto px-6  md:mt-10 mt-2 md:mb-16 mb-2 text-text18">
   {/* Breadcrumb */}
-  <div className="mb-8">
+  <div className="md:mb-8 mb-2">
     <Breadcrumbs />
   </div>
 
   {/* Heading */}
-  <h1 className="text-4xl font-bold mb-8 text-gray-900">
+  <h1 className="md:text-4xl text-2xl  md:font-bold font-semibold md:mb-8 mb-4  text-gray-900">
     What Our Customers Say!
   </h1>
 

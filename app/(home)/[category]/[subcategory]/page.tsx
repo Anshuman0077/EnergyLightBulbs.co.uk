@@ -19,10 +19,10 @@ export default function SubCategoryPage() {
   }
 
   return (
-    <div className="min-h-screen w-full bg-bg1 pb-40 md:py-8 py-4">
+    <div className="min-h-screen w-full bg-bg1 pb-40 md:py-8">
       <div className="max-w-screen-xl mx-auto px-4">
         {/* Breadcrumb */}
-        <div className="md:mb-6 mb-4">
+        <div className="md:mb-6">
           <Breadcrumbs />
         </div>
 

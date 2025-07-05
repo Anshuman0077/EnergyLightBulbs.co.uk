@@ -4,15 +4,15 @@ import React from "react";
 
 export default function TermsConditionPage() {
   return (
-    <section className="w-full flex min-h-screen text-text18 px-8 py-10">
-      <div className="w-full max-w-6xl mx-auto">
+    <section className="w-full flex min-h-screen text-text18  md:py-10">
+      <div className="w-full max-w-7xl px-6 mx-auto">
         {/* Breadcrumb */}
-        <div className="mb-6">
+        <div className="md:mb-6 mb-3">
           <Breadcrumbs />
         </div>
 
         {/* Heading */}
-        <h1 className="text-4xl font-bold tracking-tight mb-10">
+        <h1 className="md:text-4xl  text-2xl  font-semibold md:font-bold tracking-tight md:mb-10">
           Terms & Conditions
         </h1>
 
@@ -20,19 +20,19 @@ export default function TermsConditionPage() {
         <img
           src="https://doo9vxlv0gkqf.cloudfront.net/media/wysiwyg/free_delivery.jpg"
           alt="Free Delivery"
-          className="my-6 rounded-md shadow-sm max-w-full"
+          className="md:my-6 my-3  shadow-sm max-w-full"
         />
 
-        <p className="mb-6 text-sm font-medium">
+        <p className="md:mb-6  mb-3  text-sm font-medium">
           www.energylightbulbs.co.uk — Energy Light Bulbs LTD
         </p>
 
         {/* Content Sections */}
-        <div className="flex flex-col space-y-10 text-sm leading-6 tracking-tight font-medium">
+        <div className="flex flex-col space-y-3  leading-4 text-xs tracking-relaxed font-medium">
           {/* Section */}
           <section>
-            <h2 className="text-lg font-semibold mb-2">(1) General</h2>
-            <ul className="list-disc pl-6 space-y-2">
+            <h2 className="text-sm mb-1">(1) General</h2>
+            <ul className="alpha-paren   pl-6 md:space-y-2 leading-4">
               <li>
                 All quotations and orders are based on the purchaser being bound
                 by these terms. Any conflict will default to these terms.
@@ -58,16 +58,16 @@ export default function TermsConditionPage() {
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold mb-2">(2) Our Policy</h2>
-            <p>
+            <h2 className="text-sm mb-2">(2) Our Policy</h2>
+            <p className="text-sm px-1.5">
               Offering top service, premium quality products, and great value at
               all times.
             </p>
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold mb-2">(3) Order Acceptance</h2>
-            <ul className="list-disc pl-6 space-y-2">
+            <h2 className="text-sm mb-1">(3) Order Acceptance</h2>
+            <ul className="alpha-paren  pl-6 md:space-y-2 leading-4">
               <li>Website orders are acknowledged via email.</li>
               <li>
                 Telephone orders are accepted and confirmed verbally during the
@@ -77,8 +77,8 @@ export default function TermsConditionPage() {
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold mb-2">(4) Pricing</h2>
-            <ul className="list-disc pl-6 space-y-2">
+            <h2 className="text-sm mb-1">(4) Pricing</h2>
+            <ul className="alpha-paren  pl-6 md:space-y-2 leading-4">
               <li>
                 Prices are subject to change without notice. Errors will not be
                 honored.
@@ -88,8 +88,8 @@ export default function TermsConditionPage() {
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold mb-2">(5) Payment</h2>
-            <ul className="list-disc pl-6 space-y-2">
+            <h2 className="text-sm mb-1">(5) Payment</h2>
+            <ul className="alpha-paren  pl-6 md:space-y-2 leading-4">
               <li>
                 Accepted in GBP using major debit/credit cards listed on site.
               </li>
@@ -103,12 +103,12 @@ export default function TermsConditionPage() {
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold mb-2">(6) Delivery</h2>
-            <p className="mb-2">
+            <h2 className="text-sm mb-1">(6) Delivery</h2>
+            <p className="text-sm mb-1 px-1.5">
               Orders are dispatched within 24 hours, allow 7–10 days for
               delivery.
             </p>
-            <ul className="list-disc pl-6 space-y-2">
+            <ul className="alpha-paren   pl-6 md:space-y-2 leading-4">
               <li>Via Royal Mail, DHL, or courier services.</li>
               <li>
                 If not home, courier leaves card for rescheduling or pickup.
@@ -127,8 +127,8 @@ export default function TermsConditionPage() {
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold mb-2">(7) Refunds</h2>
-            <ul className="list-disc pl-6 space-y-2">
+            <h2 className="text-sm mb-1">(7) Refunds</h2>
+            <ul className="alpha-paren   pl-6 md:space-y-2 leading-4">
               <li>
                 If order can’t be fulfilled within 28 days, refund is issued.
               </li>
@@ -140,10 +140,10 @@ export default function TermsConditionPage() {
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold mb-2">
+            <h2 className="text-sm mb-1">
               (8) Description and Price of Goods
             </h2>
-            <ul className="list-disc pl-6 space-y-2">
+            <ul className="alpha-paren   pl-6 md:space-y-2 leading-4">
               <li>Descriptions are accurate at time of order.</li>
               <li>
                 Customers responsible for ensuring product suitability.
@@ -158,10 +158,10 @@ export default function TermsConditionPage() {
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold mb-2">
+            <h2 className="text-sm mb-1">
               (9) Data Protection & Privacy
             </h2>
-            <ul className="list-disc pl-6 space-y-2">
+            <ul className="alpha-paren   pl-6 md:space-y-2 leading-4">
               <li>We comply with the Data Protection Act (2018).</li>
               <li>
                 Only necessary data is stored securely, no resale of data.
@@ -173,16 +173,16 @@ export default function TermsConditionPage() {
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold mb-2">(10) Complaints</h2>
-            <p>
+            <h2 className="text-sm mb-2">(10) Complaints</h2>
+            <p  className="text-sm px-1.5">
               All complaints are handled fairly and should be submitted in
               writing or via our contact form.
             </p>
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold mb-2">(11) Indemnity</h2>
-            <ul className="list-disc pl-6 space-y-2">
+            <h2 className="text-sm mb-1">(11) Indemnity</h2>
+            <ul className="alpha-paren  pl-6 md:space-y-2 leading-4">
               <li>
                 Users agree to indemnify the company from losses caused by use
                 of the website.
@@ -194,8 +194,8 @@ export default function TermsConditionPage() {
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold mb-2">(12) Copyright Notice</h2>
-            <ul className="list-disc pl-6 space-y-2">
+            <h2 className="text-sm mb-1">(12) Copyright Notice</h2>
+            <ul className="alpha-paren   pl-6 md:space-y-2 leading-4">
               <li>All content belongs to Energy Light Bulbs LTD.</li>
               <li>
                 Legal action will be taken against unauthorized reuse of
@@ -209,8 +209,8 @@ export default function TermsConditionPage() {
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold mb-2">(13) Force Majeure</h2>
-            <p>
+            <h2 className="text-sm">(13) Force Majeure</h2>
+            <p  className="text-sm px-1.5">
               Contracts may be varied or canceled due to events beyond our
               control, such as natural disasters, strikes, or government
               restrictions.
@@ -218,8 +218,8 @@ export default function TermsConditionPage() {
           </section>
 
           <section>
-            <h2 className="text-lg font-semibold mb-2">(14) Law</h2>
-            <p>
+            <h2 className="text-sm">(14) Law</h2>
+            <p  className="text-sm px-1.5">
               Any disputes will be governed under English law and jurisdiction.
             </p>
           </section>

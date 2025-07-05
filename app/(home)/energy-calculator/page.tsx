@@ -1,7 +1,8 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { Breadcrumbs } from "../../components/breadcrum/breadcrumbs";
+import { Input } from "@/app/components/Input/Input";
 
 export default function EnergyCalculatorPage() {
   const wattRef = useRef<HTMLInputElement>(null);
@@ -45,127 +46,104 @@ export default function EnergyCalculatorPage() {
     if (saverWattRef.current)
       saverWattRef.current.textContent = saverWatt.toString();
   };
-  const [focused, setFocused] = useState({
-    watt: false,
-    cost: false,
-    hours: false,
-    bulbs: false,
-  });
-
   return (
-    <main className="w-full mx-auto py-10 px-6 text-black font-sans min-h-screen">
+    <main className="w-full mx-auto  md:py-10 px-4 sm:px-6 md:px-18 text-black font-sans min-h-screen">
       {/* Breadcrumb */}
-      <Breadcrumbs />
+      <div className="md:mb-6">
+        <Breadcrumbs />
+      </div>
 
       {/* Title */}
-      <h1 className="text-2xl font-bold mb-6 uppercase tracking-wide">
+      <h1 className="text-xl md:text-2xl font-semibold md:font-bold mb-3 md:mb-6 text-text18 uppercase tracking-wide">
         Energy Saving Calculator
       </h1>
 
       {/* Calculator */}
-      <div className="grid grid-cols-[auto_1fr] gap-x-40 gap-y-3 mb-6 text-sm">
+      <div className="grid grid-cols-1 sm:grid-cols-[auto_1fr] max-sm:grid-cols-[auto_1fr] gap-x-6 md:gap-x-20 gap-y-4 mb-6 text-sm">
+        {/* Wattage */}
         <label htmlFor="watt" className="self-center">
           Wattage of your current bulb(s)
         </label>
         <div className="flex items-center space-x-2">
-          <input
+          <Input
+            label={""}
+            name={""}
             type="text"
             id="watt"
             ref={wattRef}
             defaultValue="100"
-            onFocus={() => setFocused((prev) => ({ ...prev, watt: true }))}
-            onBlur={() => setFocused((prev) => ({ ...prev, watt: false }))}
-            className={`w-12 px-2 py-1 border text-text16 delay-50 transition-all duration-300 ${
-              focused.watt
-                ? "border-none shadow-lg shadow-blue-custom ring-4 ring-blue-500 outline-red-500 outline-1"
-                : "border-border6"
-            }`}
+            className={
+              "w-16 px-2 py-1 border text-text16 transition-all duration-300"
+            }
           />
           <span>Watts</span>
         </div>
 
+        {/* Cost */}
         <label htmlFor="cost" className="self-center">
           I currently pay
         </label>
         <div className="flex items-center space-x-2">
-          <input
+          <Input
             type="text"
             id="cost"
+            label={""}
+            name={""}
             ref={costRef}
             defaultValue="10"
-            onFocus={() => setFocused((prev) => ({ ...prev, cost: true }))}
-            onBlur={() => setFocused((prev) => ({ ...prev, cost: false }))}
-            className={`w-12 px-2 py-1 border text-text16 delay-50 transition-all duration-300 ${
-              focused.cost
-                ? "border-none shadow-lg shadow-blue-custom ring-4 ring-blue-500 outline-red-500 outline-1"
-                : "border-border6"
-            }`}
+            className="w-16 px-2 py-1 border text-text16 transition-all duration-300 outline-red-600 outline-1"
           />
           <span>pence per unit of electricity*</span>
         </div>
 
+        {/* Hours */}
         <label htmlFor="hours" className="self-center">
           Number of hours per day used
         </label>
         <div className="flex items-center space-x-2">
-          <input
+          <Input
             type="text"
             id="hours"
+            label={""}
+            name={""}
             ref={hoursRef}
             defaultValue="4"
-            onFocus={() => setFocused((prev) => ({ ...prev, hours: true }))}
-            onBlur={() => setFocused((prev) => ({ ...prev, hours: false }))}
-            className={`w-12 px-2 py-1 border text-text16 delay-50 transition-all duration-300 ${
-              focused.hours
-                ? "border-none shadow-lg shadow-blue-custom ring-4 ring-blue-500 outline-red-500 outline-1"
-                : "border-border6"
-            }`}
+            className={`w-16 px-2 py-1 border text-text16 transition-all duration-300 `}
           />
           <span>hours</span>
         </div>
 
+        {/* Bulbs */}
         <label htmlFor="bulbs" className="self-center">
           I use
         </label>
         <div className="flex items-center space-x-2">
-          <input
+          <Input
             type="text"
             id="bulbs"
             ref={bulbsRef}
+            label={""}
+            name={""}
             defaultValue="2"
-            onFocus={() => setFocused((prev) => ({ ...prev, bulbs: true }))}
-            onBlur={() => setFocused((prev) => ({ ...prev, bulbs: false }))}
-            className={`w-12 px-2 py-1 border text-text16 delay-50 transition-all duration-300 ${
-              focused.bulbs
-                ? "border-none shadow-lg shadow-blue-custom ring-4 ring-blue-500 outline-red-500 outline-1"
-                : "border-border6"
-            }`}
+            className="w-16 px-2 py-1 border text-text16 transition-all duration-300 "
           />
           <span>bulbs like this</span>
         </div>
       </div>
 
-      <div className="grid grid-cols-[auto_1fr] gap-x-30 gap-y-3 text-sm">
-        {/* Annual Cost */}
-        <div className="">
-          <span className="">Annual cost of running</span>
+      {/* Result Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-[auto_1fr] max-sm:grid-cols-[auto_1fr] gap-x-6 md:gap-x-20 gap-y-4 text-sm">
+        <div>
+          <span>Annual cost of running</span>
           <br />
-          current
-          <span ref={wattsLabelRef} className=" ">
-            100
+          current <span ref={wattsLabelRef}>100</span> <span>W bulbs:</span>
+        </div>
+        <div className="flex items-center">
+          <span ref={currentCostRef} className="font-semibold ml-2">
+            £29.20
           </span>
-          <span> W bulbs:</span>
         </div>
 
-        <div className="flex items-center ">
-          <div>
-            <span ref={currentCostRef} className="ml-2 font-semibold ">
-              £29.20
-            </span>
-          </div>
-        </div>
-
-        {/* Equivalent Energy Saver Bulb */}
         <span className="self-center">Equivalent Energy Saver bulb:</span>
         <div>
           <strong>
@@ -176,7 +154,6 @@ export default function EnergyCalculatorPage() {
           </strong>
         </div>
 
-        {/* Cost of Energy Saver Bulb */}
         <span className="self-start">
           Cost of equivalent Energy Saver bulb:
         </span>
@@ -184,17 +161,15 @@ export default function EnergyCalculatorPage() {
           £ <span ref={savingCostRef}>5.84</span>
         </div>
 
-        {/* Annual Savings */}
         <span className="self-start font-bold uppercase">Annual Savings:</span>
-        <div className="">
+        <div>
           £{" "}
-          <span ref={yearlySavingsRef} className="text-md  font-semibold">
+          <span ref={yearlySavingsRef} className="text-md font-semibold">
             23.36
           </span>
         </div>
 
-        {/* Lifetime Savings */}
-        <span className="self-start ">
+        <span className="self-start">
           Total savings made over life
           <br />
           of Energy saving bulb
@@ -202,23 +177,27 @@ export default function EnergyCalculatorPage() {
           Based on 8000 hour bulb:
         </span>
         <div className="pt-3">
-          £
-          <span ref={lifetimeSavingsRef} className="ml-1 ">
+          £{" "}
+          <span ref={lifetimeSavingsRef} className="ml-1">
             128.00
           </span>
         </div>
       </div>
 
-      <div className="mt-6 content-center flex w-1/2 mx-26 items-center justify-around">
-        <button
-          type="button"
-          onClick={handleCalculate}
-          className="bg-bg16 hover:bg-bg17 text-white py-2 px-6 rounded transition-all shadow-lg  border-border12 border-1 hover:opacity-90 box-shadow-lg hover:shadow-xl  text-text1 font-medium cursor-pointer"
-        >
-          Calculate Savings
-        </button>
+      {/* Button */}
+      <div className="mt-6 flex md:mx-60 justify-start mx-30 ">
+        <div className="relative inline-block group md:w-1/4  sm:w-1/3 ">
+          <div className="absolute inset-0 rounded-md bg-bg16 border-2 border-border12 group-hover:brightness-110 transition-all duration-300 ease-out z-0 shadow-xl" />
+
+          <div className="absolute inset-0 rounded-sm bg-gradient-to-b from-[#30c5f0] to-[#17a2b8] group-hover:brightness-110 transition-all duration-300 ease-out z-0 shadow-lg" />
+
+          <button className="relative z-20 w-full py-2 text-text1 font-bold rounded-md tracking-normal leading-relaxed transition-all duration-300 ease-out">
+            CALCULATOR
+          </button>
+        </div>
       </div>
 
+      {/* Footer Note */}
       <p className="text-md text-text18 mt-8">
         Costs and savings calculated based upon typical domestic tariff of 10p
         per unit (kWhr).
@@ -226,26 +205,20 @@ export default function EnergyCalculatorPage() {
         Please note that this is an approximate value and that this exact power
         rating may not be available.
       </p>
+
+      {/* Info Text */}
       <div className="mt-4 space-y-4 text-text18 text-md">
-        <h2 className="text-2xl text-text18 font-bold">
-          How Much Could YOU Save?
-        </h2>
+        <h2 className="text-2xl font-bold">How Much Could YOU Save?</h2>
         <p>
           Some energy saving bulbs can be more costly than traditional
-          incandescent bulbs, energy saving variants use revolutionary
-          manufacturing methods to cut your electricity consumption and save you
-          money. Energy saving light bulbs typically save around 80% more
-          electricity than incandescent bulbs.
+          incandescent bulbs...
         </p>
         <p>
           Use our energy saving calculator to work out the savings you could
-          make over the life of the bulbs by replacing normal incandescent bulbs
-          with energy saving equivalent bulbs.We have filled in average figures
-          for you just in case you're not sure about your energy price.
+          make...
         </p>
         <p>
-          There are current government drives to reduce our carbon emissions and
-          we all have a responsibility to try and look after the environment.
+          There are current government drives to reduce our carbon emissions...
         </p>
       </div>
     </main>

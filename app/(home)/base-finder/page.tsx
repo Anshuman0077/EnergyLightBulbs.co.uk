@@ -3,12 +3,12 @@ import { Breadcrumbs } from "../../components/breadcrum/breadcrumbs";
 
 export default function baseFinderPage() {
   return (
-    <section className="w-full max-w-screen-xl mx-auto px-6 py-10 bg-bg1 text-text18">
-      <div>
+    <section className="w-full max-w-screen-xl mx-auto px-6  md:py-10 bg-bg1 text-text18">
+      <div className="md:my-4 my-0">
         <Breadcrumbs/>
       </div>
-      <div className="space-y-6">
-        <h1 className="text-3xl font-bold tracking-tight">Lamp Base Finder</h1>
+      <div className="md:space-y-6 space-y-3">
+        <h1 className="md:text-3xl text-2xl font-semibold md:font-bold tracking-tight">Lamp Base Finder</h1>
 
         <p className="leading-7 tracking-tight">
           The bottom part of the bulb or lamp that connects into the light fitting is generally known as the ‘cap’ or ‘base’. There are a vast variety of caps and bases, so our "Base Finder" page has been created to help ensure that you choose the correct type of lamp.

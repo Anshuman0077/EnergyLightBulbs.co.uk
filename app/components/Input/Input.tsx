@@ -4,6 +4,9 @@ interface InputFieldsProps {
   label: string;
   name: string;
   type?: string;
+  id?: string;
+  ref?:  React.Ref<HTMLInputElement> | undefined;
+  defaultValue?: string;
   required?: boolean;
   value?: string;
   onchange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -15,7 +18,10 @@ export const Input = ({
   label,
   name,
   type = "text",
+  id,
+  defaultValue,
   required = false,
+  ref,
   value,
   onchange,
   placeholder,
@@ -32,8 +38,10 @@ export const Input = ({
       )}
       <input
         type={type}
-        id={name}
+        id={id}
+        ref={ref}
         name={name}
+        defaultValue={defaultValue}
         value={value}
         required={required}
         onChange={onchange}

@@ -268,6 +268,15 @@ body {
 }
 
 
+ul.alpha-paren {
+  list-style-type: lower-alpha;
+}
+
+ul.alpha-paren li::marker {
+  content: "(" counter(list-item, lower-alpha) ") ";
+}
+
+
 
 @layer utilities {
   .hover\:text-text6:hover {

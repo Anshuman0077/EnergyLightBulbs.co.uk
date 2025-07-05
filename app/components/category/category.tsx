@@ -42,7 +42,7 @@ export const Category = () => {
       : null;
 
   return (
-<div className="relative w-full group z-40 overflow-visible">
+<div className="relative w-full max-w-7xl px-4 mx-auto  group z-40 overflow-visible">
   {/* Category List */}
   <ul
     className="
@@ -51,8 +51,7 @@ export const Category = () => {
       grid-flow-row 
       auto-cols-max 
       grid-cols-[repeat(auto-fit,minmax(80px,1fr))] 
-       gap-y-2 gap-x-4
-      px-4 sm:px-3 md:px-18 
+       gap-y-2 gap-x-3
       relative z-10
     "
   >
@@ -86,7 +85,7 @@ export const Category = () => {
 
   {/* Underline Animation (desktop only) */}
   <div className="hidden md:block absolute left-0 bottom-0 w-full h-0.5 bg-transparent z-10">
-    <div className="bg-bg6 h-full w-0 group-hover:w-[calc(100%-5rem)] mx-20 ml-10 transition-all ease-in-out duration-300" />
+    <div className="bg-bg6 h-full w-0 group-hover:w-[calc(100%-1rem)] mx-3  transition-all ease-in-out duration-300" />
   </div>
 
   {/* Dropdown */}
@@ -96,7 +95,7 @@ export const Category = () => {
       onMouseLeave={handleMouseLeave}
       className="absolute top-full left-0 w-full z-50"
     >
-      <div className="w-full shadow-md px-4 sm:px-6 md:px-10 overflow-x-auto">
+      <div className="  w-full px-3 mx-auto overflow-x-auto">
         <div className="bg-bg3 px-1 py-2">
           <CategoryData
             subcategories={currentCategory.subcategory}

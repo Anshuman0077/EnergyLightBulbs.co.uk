@@ -2,7 +2,7 @@ import React from "react";
 
 export const Offers = () => {
   return (
-<div className="w-full px-4 sm:px-6 md:px-10 lg:px-16">
+<div className="w-full ">
   {/* Top Section: Welcome + Image */}
   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
     {/* Welcome Text */}
