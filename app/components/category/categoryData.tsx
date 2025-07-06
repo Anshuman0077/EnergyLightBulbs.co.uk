@@ -9,6 +9,9 @@ interface Props {
 }
 
 export const CategoryData: React.FC<Props> = ({ subcategories, mainCategoryName }) => {
+
+
+  
   return (
     <div className="w-full  max-w-7xl px-6 mx-auto grid grid-cols-1 auto-rows-auto gap-x-3  py-2 text-black">
       {subcategories.map((sub, index) => {
@@ -26,7 +29,7 @@ export const CategoryData: React.FC<Props> = ({ subcategories, mainCategoryName 
 
         return (
           <div key={index} className={`flex flex-col mb-4 ${positionClass}`}>
-            <Link href={`/${generateSlug(mainCategoryName)}`} className="font-semibold text-md border-b py-2 mb-2 transition-all duration-500 ease-in-out hover:translate-x-2 text-text13 hover:text-text20 hover:opacity-80">{sub.name}</Link>
+            <Link href={`/${generateSlug(mainCategoryName)}/${generateSlug(sub.name)}`} className="font-semibold text-md border-b py-2 mb-2 transition-all duration-500 ease-in-out hover:translate-x-2 text-text13 hover:text-text20 hover:opacity-80">{sub.name}</Link>
             <div className="flex flex-col gap-3">
               {sub.items.map((item, idx) => (
                 <div

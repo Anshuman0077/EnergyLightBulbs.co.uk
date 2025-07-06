@@ -1,30 +1,17 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { FaPhoneAlt} from "react-icons/fa";
+import { FaPhoneAlt } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoCallSharp, IoSearch } from "react-icons/io5";
 import { Input } from "../Input/Input";
-import { AccountDropdown } from "./accountDropdown";
-import BasketDropdownWrapper from "./BasketDropdownWrapper";
+import BasketDropdownWrapper from "./Dropdown/BasketDropdown/BasketDropdownWrapper";
+import AccountDropdownWrapper from "./Dropdown/AccountDropdown/AccountDropdownWrapper";
+import MobileHamburgerTrigger from "./HamburgerTrigger/MobileHamburgerTrigger";
+import { categoryList } from "../category/categoryList";
 
 export default function Header() {
-  const [showAccount, setShowAccount] = useState(false);
-  const [showBasket, setShowBasket] = useState(false);
-  const [Qty, setQty] = useState("");
-
-  const accountRef = useRef<HTMLDivElement>(null);
-
-
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (accountRef.current && !accountRef.current.contains(e.target as Node)) {
-        setShowAccount(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
 
   return (
     <header className="w-full h-full flex bg-bg1">
@@ -35,18 +22,27 @@ export default function Header() {
             {/* Mobile Top Row */}
             <div className="md:hidden w-full justify-between items-center flex">
               <div className="flex items-center px-4 justify-between gap-x-3 mt-2 w-full">
-                <div className="md:hidden text-text16">
+                <button
+                  className="md:hidden text-text16"
+                  onClick={() => setIsSheetOpen(true)}
+                >
                   <RxHamburgerMenu size={24} />
+                </button>
+
+                <a href="/" className="flex md:hidden">
+                  <img
+                    src="https://doo9vxlv0gkqf.cloudfront.net/media/logo/default/LOGO_ELB_update_100122.jpg"
+                    alt="logo"
+                    className="h-full w-[240px] max-sm:[200px]"
+                  />
+                </a>
+
+                <div className="flex-1 flex w-full items-center" />
+
+                <div className="md:hidden flex">
+                  <AccountDropdownWrapper />
                 </div>
-                <div className="flex-1 flex w-full" />
-               
-                <AccountDropdown
-                  isMobile
-                  showAccount={showAccount}
-                  setShowAccount={setShowAccount}
-                  accountRef={accountRef}
-                  
-                />
+
                 <div className="md:hidden bg-bg3 py-2 px-3 text-text16 rounded">
                   <IoCallSharp size={20} />
                 </div>
@@ -90,22 +86,19 @@ export default function Header() {
 
               {/* Desktop Account + Basket */}
               <div className="flex items-center space-x-3 mt-2.5 mx-3 z-[60] relative">
-                <AccountDropdown
-                  showAccount={showAccount}
-                  setShowAccount={setShowAccount}
-                  accountRef={accountRef}
-                />
-                <div className="hidden md:flex">
-                   <BasketDropdownWrapper />
-
+                <div className="md:flex hidden">
+                  <AccountDropdownWrapper />
                 </div>
-                 
+
+                <div className="hidden md:flex">
+                  <BasketDropdownWrapper />
+                </div>
               </div>
             </div>
 
             {/* Search + Mobile Basket */}
             <div className="w-full md:px-0 max-sm:px-4 sm:px-4 space-x-3 flex justify-start md:justify-end py-0 bg-gray-600 md:bg-white transition-colors duration-300">
-               <div className="relative w-full max-w-xl md:mt-4 mt-0">
+              <div className="relative w-full max-w-xl md:mt-4 mt-0">
                 <div className="sm:px-6 md:px-0 md:py-0 sm:py-2 max-sm:py-2 mr-4 ">
                   <Input
                     type="text"
@@ -123,13 +116,21 @@ export default function Header() {
 
               {/* Mobile Basket Dropdown */}
               <div className="md:hidden flex my-2">
-                  <BasketDropdownWrapper />
+                <BasketDropdownWrapper />
               </div>
-               
             </div>
           </div>
         </div>
       </div>
+
+      {/* Mobile Sheet Menu */}
+
+      <MobileHamburgerTrigger
+        isSheetOpen={isSheetOpen}
+        setIsSheetOpen={setIsSheetOpen}
+        subcategories={categoryList[0].subcategory}
+        mainCategoryName={categoryList[0].name}
+      />
     </header>
   );
 }

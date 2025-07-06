@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { LuShoppingBasket } from "react-icons/lu";
 import { MdArrowDropDown, MdDelete, MdEdit } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
-import { Input } from "../Input/Input";
+import { Input } from "@/app/components/Input/Input";
 
 const DesktopBasketDropdown: React.FC = () => {
   const [showBasket, setShowBasket] = useState(false);
