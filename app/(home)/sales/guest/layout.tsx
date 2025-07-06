@@ -9,8 +9,8 @@ export default function AccountLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen flex px-4">
-      <div className=" w-full bg-white p-6 ">{children}</div>
+    <div className="min-h-screen w-full max-w-7xl px-6 mx-auto flex ">
+      <div className=" w-full  bg-bg1">{children}</div>
     </div>
   );
 }
