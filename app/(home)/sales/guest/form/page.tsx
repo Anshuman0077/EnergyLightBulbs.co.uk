@@ -24,72 +24,75 @@ export default function OrderReturnForm() {
   };
 
   return (
-    <section className="px-4  min-h-screen w-full flex text-text18 bg-white">
-      <div className="w-full  mx-auto space-y-8">
-        {/* Breadcrumbs */}
-        <Breadcrumbs />
+<section className="min-h-screen w-full flex bg-bg1 text-text18">
+  <div className="w-full mx-auto md:mt-8 space-y-3 md:space-y-6">
+    
+    {/* Breadcrumbs */}
+    <Breadcrumbs />
 
-        {/* Headings */}
-        <legend className="text-4xl font-bold text-text17 tracking-tight leading-relaxed">
-          ORDERS AND RETURNS
-        </legend>
+    {/* Page Title */}
+    <legend className="text-2xl md:text-4xl font-semibold md:font-bold text-text17 tracking-tight leading-relaxed">
+      ORDERS AND RETURNS
+    </legend>
 
-        <div>
-          <legend className="text-xl font-semibold text-black tracking-tight leading-relaxed">
-            ORDER INFORMATION
-          </legend>
-          <div className="border-t w-1/3 border-border3 mt-2" />
+    <div>
+      {/* Section Heading */}
+      <legend className="text-lg md:text-xl font-medium md:font-semibold text-black tracking-tight leading-relaxed">
+        ORDER INFORMATION
+      </legend>
+      <div className="hidden md:block w-1/3 mt-2 border-t border-border3" />
 
-          {/* Form */}
-          <form className="w-full max-w-md space-y-6 mt-6">
-            <Input
-              label="Order ID"
-              name="orderId"
-              required
-              value={formData.orderId}
-              onchange={handleChange}
-            />
-            <Input
-              label="Billing Last Name"
-              name="billinglastname"
-              required
-              value={formData.billinglastname}
-              onchange={handleChange}
-            />
+      {/* Form */}
+      <form className="w-full max-w-md mt-6 space-y-6">
+        <Input
+          label="Order ID"
+          name="orderId"
+          required
+          value={formData.orderId}
+          onchange={handleChange}
+        />
+        <Input
+          label="Billing Last Name"
+          name="billinglastname"
+          required
+          value={formData.billinglastname}
+          onchange={handleChange}
+        />
+        <Select
+          label="Find Order By"
+          name="findorderby"
+          value={formData.findorderby}
+          onchange={handleChange}
+          options={[
+            { value: "email", label: "Email" },
+            { value: "zip", label: "ZIP Code" },
+          ]}
+        />
+        <Input
+          label="Email"
+          name="email"
+          required
+          value={formData.email}
+          onchange={handleChange}
+        />
+      </form>
 
-            <Select
-              label="Find Order By"
-              name="findorderby"
-              value={formData.findorderby}
-              onchange={handleChange}
-              options={[
-                { value: "email", label: "Email" },
-                { value: "zip", label: "ZIP Code" },
-              ]}
-            />
+      {/* Continue Button */}
+      <div className="relative inline-block group mt-10">
+        {/* Glossy background layer */}
+        <div className="absolute inset-0 rounded-sm bg-gradient-to-b from-[#30c5f0] to-[#17a2b8] group-hover:brightness-110 transition-all duration-300 ease-out shadow-lg z-0" />
 
-            <Input
-              label="Email"
-              name="email"
-              required
-              value={formData.email}
-              onchange={handleChange}
-            />
-          </form>
-          <div className="relative inline-block group  mt-10">
-            {/* Glossy background layer */}
-            <div className="absolute inset-0 rounded-sm bg-gradient-to-b from-[#30c5f0] to-[#17a2b8] group-hover:brightness-110 transition-all duration-300 ease-out z-0 shadow-lg" />
+        {/* Soft 3D effect overlay */}
+        <div className="absolute inset-0 rounded-md border border-white opacity-20 pointer-events-none z-10" />
 
-            {/* Border overlay for soft 3D effect */}
-            <div className="absolute inset-0 rounded-md border border-white opacity-20 z-10 pointer-events-none" />
-
-            {/* Main Button Content */}
-            <div className="relative z-20 px-6 py-1.5 text-white font-bold rounded-md text-lg tracking-wide">
-              <a href="/customer/account/create">Continue</a>
-            </div>
-          </div>
+        {/* Button content */}
+        <div className="relative z-20 px-6 py-1.5 text-white text-lg font-bold tracking-wide rounded-md">
+          <a href="/customer/account/create">Continue</a>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
   );
 }

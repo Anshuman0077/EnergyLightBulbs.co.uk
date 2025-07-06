@@ -8,8 +8,8 @@ export default function ForgetPasswordPage() {
 
   return (
     <section className="w-full flex  text-text18">
-      <div className="space-y-8">
-        <h1 className="text-text17 text-5xl mt-3 tracking-tight">
+      <div className="md:space-y-8 space-y-4">
+        <h1 className="text-text17 md:text-5xl text-3xl  md:mt-4  mt-0 md:tracking-tight tracking-wide">
           Forgot Your Password ?
         </h1>
         <p>
