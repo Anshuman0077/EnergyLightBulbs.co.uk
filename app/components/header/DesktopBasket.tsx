@@ -1,35 +1,31 @@
 "use client";
 
-import React, { Dispatch, SetStateAction, RefObject } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { LuShoppingBasket } from "react-icons/lu";
 import { MdArrowDropDown, MdDelete, MdEdit } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
 import { Input } from "../Input/Input";
 
-interface BasketDropdownProps {
-  showBasket: boolean;
-  setShowBasket: Dispatch<SetStateAction<boolean>>;
-  basketRef: RefObject<HTMLDivElement | null>;
-  Qty: string;
-  setQty: Dispatch<SetStateAction<string>>;
-  isMobile?: boolean;
-}
+const DesktopBasketDropdown: React.FC = () => {
+  const [showBasket, setShowBasket] = useState(false);
+  const [Qty, setQty] = useState("1");
+  const basketRef = useRef<HTMLDivElement | null>(null);
 
-export const BasketDropdown: React.FC<BasketDropdownProps> = ({
-  showBasket,
-  setShowBasket,
-  basketRef,
-  Qty,
-  setQty,
-  isMobile = false,
-}) => {
+    useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (basketRef.current && !basketRef.current.contains(e.target as Node)) {
+        setShowBasket(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
-    <div
-      className={`relative ${isMobile ? "flex md:hidden my-2" : "hidden md:flex"}`}
-      ref={basketRef}
-    >
+    <div className="relative hidden md:flex" ref={basketRef}>
+      {/* Basket Button */}
       <div
-        className="flex items-center space-x-2 px-3 md:py-2  py-1 rounded-md bg-bg7 text-white font-bold cursor-pointer"
+        className="flex items-center space-x-2 px-3 md:py-2 py-1 rounded-md bg-bg7 text-white font-bold cursor-pointer"
         onClick={() => setShowBasket((prev) => !prev)}
       >
         <span className="text-md">BASKET</span>
@@ -37,17 +33,10 @@ export const BasketDropdown: React.FC<BasketDropdownProps> = ({
         <MdArrowDropDown className="text-text19 text-lg" />
       </div>
 
+      {/* Dropdown */}
       {showBasket && (
-        <div
-          className={`absolute top-full z-50 mt-2 rounded-md border border-gray-300 shadow-md bg-white w-[95vw] max-w-md md:w-96 ${
-            isMobile
-              ? "left-0  -translate-x-1/4 max-h-[80vh] overflow-y-auto"
-              : "md:right-0 md:left-auto left-0 -translate-x-1/2 md:translate-x-0"
-          }`}
-        >
-          {!isMobile && (
-            <div className="absolute -top-2 right-5 w-4 h-4 bg-white rotate-45 border-l border-t border-gray-300" />
-          )}
+        <div className="absolute top-full z-50 mt-2 rounded-md border border-gray-300 shadow-md bg-white w-[95vw] max-w-md md:w-96 md:right-0 md:left-auto left-0 -translate-x-1/2 md:translate-x-0">
+          <div className="absolute -top-2 right-5 w-4 h-4 bg-white rotate-45 border-l border-t border-gray-300" />
 
           <div className="flex justify-end p-2">
             <RxCross2 className="cursor-pointer" onClick={() => setShowBasket(false)} />
@@ -139,3 +128,5 @@ export const BasketDropdown: React.FC<BasketDropdownProps> = ({
     </div>
   );
 };
+
+export default DesktopBasketDropdown;

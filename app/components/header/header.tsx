@@ -6,7 +6,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { IoCallSharp, IoSearch } from "react-icons/io5";
 import { Input } from "../Input/Input";
 import { AccountDropdown } from "./accountDropdown";
-import { BasketDropdown } from "./basketDropdown";
+import BasketDropdownWrapper from "./BasketDropdownWrapper";
 
 export default function Header() {
   const [showAccount, setShowAccount] = useState(false);
@@ -14,15 +14,12 @@ export default function Header() {
   const [Qty, setQty] = useState("");
 
   const accountRef = useRef<HTMLDivElement>(null);
-  const basketRef = useRef<HTMLDivElement>(null);
+
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (accountRef.current && !accountRef.current.contains(e.target as Node)) {
         setShowAccount(false);
-      }
-      if (basketRef.current && !basketRef.current.contains(e.target as Node)) {
-        setShowBasket(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -98,13 +95,11 @@ export default function Header() {
                   setShowAccount={setShowAccount}
                   accountRef={accountRef}
                 />
-                <BasketDropdown
-                  showBasket={showBasket}
-                  setShowBasket={setShowBasket}
-                  basketRef={basketRef}
-                  Qty={Qty}
-                  setQty={setQty}
-                />
+                <div className="hidden md:flex">
+                   <BasketDropdownWrapper />
+
+                </div>
+                 
               </div>
             </div>
 
@@ -127,15 +122,10 @@ export default function Header() {
               </div>
 
               {/* Mobile Basket Dropdown */}
-              <BasketDropdown
-                showBasket={showBasket}
-                setShowBasket={setShowBasket}
-                basketRef={basketRef}
-                Qty={Qty}
-                setQty={setQty}
-                isMobile
-                
-              />
+              <div className="md:hidden flex my-2">
+                  <BasketDropdownWrapper />
+              </div>
+               
             </div>
           </div>
         </div>
