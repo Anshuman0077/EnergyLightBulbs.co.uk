@@ -19,13 +19,14 @@ export default function ShippingPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-white text-black w-full px-6 sm:px-12 lg:px-20 py-6">
+    <main className="min-h-screen bg-white text-black w-full  max-w-7xl px-6 mx-auto py-6">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <a href="/">
           <img
             src="https://doo9vxlv0gkqf.cloudfront.net/media/logo/default/LOGO_ELB_update_100122.jpg"
             alt="EnergyLightBulbs.co.uk Logo"
+            className=""
           />
         </a>
 
@@ -38,34 +39,37 @@ export default function ShippingPage() {
       </div>
 
       {/* Progress Steps */}
-      <div className="relative flex items-center w-full mb-10">
+      <div className="relative flex items-center justify-start w-full mb-10">
         {/* Full Progress Bar Container */}
-        <div className="absolute top-4 left-0 h-2.5 w-1/4 bg-bg5 rounded-full overflow-hidden">
+        <div className="absolute top-4 left-0 h-2.5 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 bg-bg5 rounded-full overflow-hidden">
           {/* Completed part (50%) */}
           <div className="h-full bg-bg10 w-1/2"></div>
         </div>
 
         {/* Steps */}
-        <div className="flex justify-around w-1/4  relative z-10">
+        <div className="flex justify-around w-full sm:w-1/2 md:w-1/3 lg:w-1/4 relative z-10">
           {/* Step 1: Shipping */}
-          <div className="flex flex-col items-center ">
-            <div className="w-12 h-12 rounded-full bg-bg1 text-text18 flex items-center justify-center text-md font-bold border-8 border-border13">
+          <div className="flex flex-col items-center">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-bg1 text-text18 flex items-center justify-center text-sm sm:text-md font-bold border-8 border-border13">
               ✓
             </div>
-            <span className="text-lg font-bold text-text16">Shipping</span>
+            <span className="text-sm sm:text-lg font-bold text-text16">
+              Shipping
+            </span>
           </div>
 
           {/* Step 2: Review */}
-          <div className="flex flex-col items-center ">
-            <div className="w-12 h-12 rounded-full  text-text16 bg-bg1 flex items-center justify-center text-md font-bold border-8 border-border1">
+          <div className="flex flex-col items-center">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-bg1 text-text16 flex items-center justify-center text-sm sm:text-md font-bold border-8 border-border1">
               2
             </div>
-            <span className="text-lg font-medium text-text16">
+            <span className="text-sm sm:text-lg font-medium text-text16">
               Review & Payments
             </span>
           </div>
         </div>
       </div>
+
       {/* Section Title */}
       <div className="flex flex-col items-start w-full mb-6">
         <h1 className="text-2xl font-semibold mb-2">Shipping Address</h1>
@@ -74,7 +78,7 @@ export default function ShippingPage() {
 
       <div className="flex flex-col lg:flex-row lg:space-x-10 w-full justify-between">
         {/* Left: Form */}
-        <div className="w-full lg:w-1/3">
+        <div className="w-full lg:w-1/2 xl:w-1/3">
           <form className="space-y-6">
             {/* Email Field */}
             <div>
@@ -103,7 +107,6 @@ export default function ShippingPage() {
               <div className="border-t border-border3 my-6" />
             </div>
 
-            {/* Name Fields */}
             <Input
               type="text"
               label="First Name"
@@ -123,7 +126,6 @@ export default function ShippingPage() {
               className="text-sm"
             />
 
-            {/* Address Fields */}
             <Input
               type="text"
               label="Company"
@@ -156,7 +158,6 @@ export default function ShippingPage() {
               className="text-sm"
             />
 
-            {/* Phone Field with Tooltip */}
             <div className="flex items-start justify-between">
               <Input
                 type="text"
@@ -172,8 +173,9 @@ export default function ShippingPage() {
               </div>
             </div>
           </form>
-          <div className="mt-10 ">
-            <div className="flex items-center justify-between ">
+
+          <div className="mt-10">
+            <div className="flex items-center justify-between">
               <h1 className="text-lg font-semibold">Shipping Methods</h1>
               <span className="text-sm text-blue-500 hover:underline cursor-pointer">
                 See our shipping policy
@@ -183,58 +185,44 @@ export default function ShippingPage() {
             <div className="border-t border-border4 mt-2 mb-6" />
 
             <div className="text-xs flex flex-col space-y-4">
-              {/* Option 1 */}
-              <label className="flex items-start space-x-2 cursor-pointer  p-2 rounded-md transition">
-                <input
-                  type="radio"
-                  name="shipping"
-                  className="mt-1 accent-bg17"
-                />
-                <div className="flex space-x-3 text-sm">
-                  <span className="text-text19 font-bold text-md">£0.00</span>
-                  <span className="text-gray-600">(Incl. VAT)</span>
-                  <span className="text-gray-700 font-medium">Free</span>
-                  <span className="text-gray-700">Free Standard Shipping</span>
-                </div>
-              </label>
-
-              <div className="border-t border-border4" />
-
-              {/* Option 2 */}
-              <label className="flex items-start space-x-2 cursor-pointer  p-2 rounded-md transition">
-                <input
-                  type="radio"
-                  name="shipping"
-                  className="mt-1 accent-bg17"
-                />
-                <div className="flex space-x-3 text-sm">
-                  <span className="text-text19 font-bold text-md">£9.99</span>
-                  <span className="text-gray-600">(Incl. VAT)</span>
-                  <span className="text-gray-700 font-medium">Fixed</span>
-                  <span className="text-gray-700">
-                    Next Working Day (Mon–Fri)
-                  </span>
-                </div>
-              </label>
-
-              <div className="border-t border-border4" />
-
-              {/* Option 3 */}
-              <label className="flex items-start space-x-2 cursor-pointer p-2 rounded-md transition">
-                <input
-                  type="radio"
-                  name="shipping"
-                  className="mt-1 accent-bg17"
-                />
-                <div className="flex  space-x-3 text-sm">
-                  <span className="text-text19 font-bold text-md">£15.99</span>
-                  <span className="text-gray-600">(Incl. VAT)</span>
-                  <span className="text-gray-700 font-medium">Fixed</span>
-                  <span className="text-gray-700">
-                    IOM Delivery (Offshore Island)
-                  </span>
-                </div>
-              </label>
+              {[
+                {
+                  price: "£0.00",
+                  label: "Free",
+                  desc: "Free Standard Shipping",
+                },
+                {
+                  price: "£9.99",
+                  label: "Fixed",
+                  desc: "Next Working Day (Mon–Fri)",
+                },
+                {
+                  price: "£15.99",
+                  label: "Fixed",
+                  desc: "IOM Delivery (Offshore Island)",
+                },
+              ].map((opt, i) => (
+                <React.Fragment key={i}>
+                  <label className="flex items-start space-x-2 cursor-pointer p-2 rounded-md transition">
+                    <input
+                      type="radio"
+                      name="shipping"
+                      className="mt-1 accent-bg17"
+                    />
+                    <div className="flex flex-wrap gap-x-3 text-sm">
+                      <span className="text-text19 font-bold text-md">
+                        {opt.price}
+                      </span>
+                      <span className="text-gray-600">(Incl. VAT)</span>
+                      <span className="text-gray-700 font-medium">
+                        {opt.label}
+                      </span>
+                      <span className="text-gray-700">{opt.desc}</span>
+                    </div>
+                  </label>
+                  <div className="border-t border-border4" />
+                </React.Fragment>
+              ))}
             </div>
 
             <div className="flex w-full justify-end mt-6">
@@ -245,11 +233,12 @@ export default function ShippingPage() {
           </div>
         </div>
 
-        {/* Spacer */}
-
         {/* Right: Order Summary */}
-        <div className="w-full lg:w-1/3 h-60 bg-bg3 p-6 mt-8 lg:mt-0 shadow-sm rounded-sm">
+        <div className="w-full lg:w-1/2 xl:w-1/3 md:h-60 h-full  bg-bg3 p-6 mt-8 lg:mt-0 shadow-sm rounded-sm">
+          {/* Heading */}
           <h2 className="text-lg font-semibold mb-4">Order Summary</h2>
+
+          {/* Accordion Toggle */}
           <div
             className="flex items-center justify-between cursor-pointer mb-2"
             onClick={() => setIsOpen(!isOpen)}
@@ -261,14 +250,16 @@ export default function ShippingPage() {
               <RiArrowDropDownLine size={24} />
             )}
           </div>
+
           <div className="border-b border-gray-300 mb-2" />
 
+          {/* Accordion Content (Responsive & Always Accordion) */}
           <div
-            className={`overflow-y-auto transition-all duration-300 mt-4 ${
-              isOpen ? "opacity-100 h-full" : "opacity-0 h-0"
+            className={`transition-all duration-500 ease-in-out overflow-hidden ${
+              isOpen ? "max-h-[500px] opacity-100 mt-4" : "max-h-0 opacity-0"
             }`}
           >
-            <div className="flex items-start space-x-4 ">
+            <div className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-4">
               <img
                 src="https://doo9vxlv0gkqf.cloudfront.net/media/catalog/product/cache/f963b4b47690ed70ff7232e8fe5844b4/2/_/2_292_18.jpg"
                 alt="Product"
