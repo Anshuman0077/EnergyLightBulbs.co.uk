@@ -10,6 +10,8 @@ interface SelectProps {
   options: { value: string; label: string }[];
   required?: boolean;
   onchange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  className?: string;
+  
 }
 
 export const Select = ({
@@ -19,6 +21,7 @@ export const Select = ({
   options,
   required = false,
   onchange,
+  className= ''
 }: SelectProps) => {
   const [focused, setFocused] = useState(false);
 
@@ -35,11 +38,8 @@ export const Select = ({
         onChange={onchange}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
-        className={`border px-3 py-2 rounded focus:outline-none transition-shadow duration-200 ${
-          focused
-            ? "border-border9 shadow-md shadow-blue-custom"
-            : "border-border3"
-        }`}
+        className={`border px-3 py-2 rounded focus:outline-none transition-shadow duration-200 ${ 
+          focused ? "border-border9 shadow-md shadow-blue-custom" : "border-border3"}  ${className} `}
       >
         {options.map((opt) => (
           <option key={opt.value} value={opt.value}> 

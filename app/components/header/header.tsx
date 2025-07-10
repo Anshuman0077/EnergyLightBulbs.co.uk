@@ -9,6 +9,7 @@ import BasketDropdownWrapper from "./Dropdown/BasketDropdown/BasketDropdownWrapp
 import AccountDropdownWrapper from "./Dropdown/AccountDropdown/AccountDropdownWrapper";
 import MobileHamburgerTrigger from "./HamburgerTrigger/MobileHamburgerTrigger";
 import { categoryList } from "../category/categoryList";
+import SearchBar from "./SearchBar";
 
 export default function Header() {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
@@ -29,7 +30,9 @@ export default function Header() {
                   <RxHamburgerMenu size={24} />
                 </button>
 
-                <a href="/" className="flex md:hidden">
+                 {/* Logo */}
+
+                <a href="/" className="flex md:hidden mt-3">
                   <img
                     src="https://doo9vxlv0gkqf.cloudfront.net/media/logo/default/LOGO_ELB_update_100122.jpg"
                     alt="logo"
@@ -50,7 +53,8 @@ export default function Header() {
             </div>
 
             {/* Logo */}
-            <a href="/" className="md:flex hidden">
+            
+            <a href="/" className="md:flex hidden  mt-3">
               <img
                 src="https://doo9vxlv0gkqf.cloudfront.net/media/logo/default/LOGO_ELB_update_100122.jpg"
                 alt="logo"
@@ -98,21 +102,7 @@ export default function Header() {
 
             {/* Search + Mobile Basket */}
             <div className="w-full md:px-0 max-sm:px-4 sm:px-4 space-x-3 flex justify-start md:justify-end py-0 bg-gray-600 md:bg-white transition-colors duration-300">
-              <div className="relative w-full max-w-xl md:mt-4 mt-0">
-                <div className="sm:px-6 md:px-0 md:py-0 sm:py-2 max-sm:py-2 mr-4 ">
-                  <Input
-                    type="text"
-                    name="search"
-                    placeholder="Search entire store here..."
-                    className="w-full md:py-3 py-0 text-xs sm:rounded-tl-md sm:rounded-bl-md md:rounded-none max-sm:rounded-tl-md max-sm:rounded-bl-md border border-border4 text-text4 bg-white shadow-sm placeholder:font-bold focus:outline-none md:mx-4  sm:mx-0"
-                    label=""
-                  />
-                  <IoSearch
-                    size={20}
-                    className="absolute sm:right-0 md:right-4 max-sm:right-0 top-1/2 -translate-y-1/2 transition-colors duration-300"
-                  />
-                </div>
-              </div>
+              <SearchBar />
 
               {/* Mobile Basket Dropdown */}
               <div className="md:hidden flex my-2">
