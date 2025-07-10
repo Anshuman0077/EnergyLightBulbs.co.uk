@@ -282,7 +282,7 @@ ul.alpha-paren li::marker {
   scrollbar-width: none;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
+
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }

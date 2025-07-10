@@ -96,7 +96,7 @@ export const Category = () => {
       className="absolute top-full left-0 w-full z-50"
     >
       <div className="  w-full px-3 mx-auto overflow-x-auto">
-        <div className="bg-bg3 px-1 py-2">
+        <div className="bg-bg1 shadow-lg px-1 py-2">
           <CategoryData
             subcategories={currentCategory.subcategory}
             mainCategoryName={currentCategory.name}
