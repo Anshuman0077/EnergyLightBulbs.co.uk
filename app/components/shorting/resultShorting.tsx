@@ -79,9 +79,13 @@ export default function ResultShorting({
             onClick={handleMobileToggle}
             className="md:hidden flex sm:text-center max-sm:text-start text-sm font-bold cursor-pointer"
           >
-            View as <span>{view === "grid" ? "Grid" : "List"}</span> View
+            View as {"    "}
+            <span className="text-blue-600 pl-1">
+              {view === "grid" ? "Grid" : "List"}
+            </span>{" "}
+            {/* View */}
           </p>
-          <div className="hidden sm:flex items-center border-1 border-border3 bg-bg3 text-text16">
+          <div className="hidden md:flex items-center border-1 border-border3 bg-bg3 text-text16">
             <button
               onClick={() => setView("grid")}
               className={`p-2 transition-colors ${
@@ -101,8 +105,8 @@ export default function ResultShorting({
               <BsGrid1X2Fill size={18} />
             </button>
           </div>
-
-          <span className="text-sm">
+             
+          <span className="text-sm ">
             Items {startItem}-{endItem} of {totalItems}
           </span>
 
@@ -145,7 +149,6 @@ export default function ResultShorting({
         </div>
 
         {/* Right Filters */}
-
         <div className="flex flex-wrap py-1.5 items-center gap-4 justify-end w-full md:w-auto">
           <div className="flex items-center gap-2">
             <label htmlFor="itemsPerPage" className="text-sm font-medium">
