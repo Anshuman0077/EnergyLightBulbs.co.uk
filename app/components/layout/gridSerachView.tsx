@@ -19,12 +19,12 @@ export default function GridSerachView() {
   const endIndex = startIndex + itemsPerPage;
   const paginatedItems = matchedItems.slice(startIndex, endIndex);
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 md:gap-4">
       {paginatedItems.length > 0 ? (
         paginatedItems.map((item, i) => (
           <div
             key={i}
-            className="w-full border-2 group hover:border-orange-400 transition-colors duration-300 ease-in-out shadow-md border-border2 p-2 pb-5"
+            className="w-full border-2 group hover:border-orange-400 transition-colors duration-300 ease-in-out shadow-md border-border2 md:p-2 md:pb-5"
           >
             <div className="p-4 h-full relative overflow-hidden border rounded border-border1 group-hover:border-orange-400 transition">
               {/* Image */}
@@ -32,7 +32,7 @@ export default function GridSerachView() {
                 <img
                   src={item.img}
                   alt={item.content}
-                  className="w-full h-full object-contain mb-2"
+                  className="w-full h-[24vh] md:h-full object-contain mb-2"
                 />
               </div>
 
@@ -42,7 +42,7 @@ export default function GridSerachView() {
               </p>
 
               {/* Reviews */}
-              <div className="flex items-center justify-center space-x-1 pt-10 text-lg">
+              <div className="flex items-center justify-center space-x-1 md:pt-10 text-lg">
                 <div className="flex text-text6">
                   {[...Array(5)].map((_, idx) => (
                     <IoMdStar key={idx} />
@@ -54,7 +54,7 @@ export default function GridSerachView() {
               </div>
 
               {/* Price */}
-              <div className="flex items-center mb-18 justify-center pt-4">
+              <div className="flex items-center md:mb-18 mb-14  justify-center pt-4">
                 <p className="text-xl text-text6 text-center">
                   £{item.price}
                   <span className="text-sm text-text16 font-light pl-1">
